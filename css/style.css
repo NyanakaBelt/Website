@@ -1247,3 +1247,5 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
 .inner-page .filter-btn      { color: var(--text-mid); border-color: rgba(0,0,0,0.15); }
 .inner-page .filter-btn.active,
 .inner-page .filter-btn:hover { color: var(--accent-dark); border-color: var(--accent); background: rgba(212,160,23,0.07); }
+
+.inner-page .footer { background: var(--primary-dark); }
