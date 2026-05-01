@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Portfolio | Mechatrolix</title>
+  <meta name="description" content="Mechatrolix project portfolio: uranium plant automation, WinCC-Odoo ERP integration, power station lime plant and wastewater treatment EC&amp;I.">
+  <meta name="keywords" content="automation projects portfolio, uranium plant SCADA, WinCC Odoo integration, power station PLC, wastewater EPLAN, Siemens S7-1500">
+  <meta property="og:title" content="Projects Portfolio | Mechatrolix">
+  <meta property="og:description" content="Real-world industrial automation projects delivered by Mechatrolix.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-color.png" alt="Mechatrolix" class="nav-logo-img">
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html"        class="nav-link" data-page="index.html">Home</a>
+      <a href="industries.html"   class="nav-link" data-page="industries.html">Industries &amp; Expertise</a>
+      <a href="projects.html"     class="nav-link" data-page="projects.html">Projects</a>
+      <a href="blog.html"         class="nav-link" data-page="blog.html">Blog</a>
+      <a href="testimonials.html" class="nav-link" data-page="testimonials.html">Testimonials</a>
+      <a href="index.html#contact" class="btn btn-gold btn-sm nav-link-cta-mobile">Contact Us</a>
+    </nav>
+    <div class="nav-cta"><a href="index.html#contact" class="btn btn-gold btn-sm">Contact Us</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a href="https://wa.me/27764275011" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Modal overlay (JS populates content) -->
+<div class="modal-overlay" id="modalOverlay"></div>
+
+<!-- Hidden modal templates -->
+<template id="modal-uranium">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h2>Uranium Plant Automation</h2>
+    <div class="modal-tags">
+      <span class="project-tag">Mining</span>
+      <span class="project-tag">Full Lifecycle</span>
+      <span class="project-tag">Tanzania</span>
+    </div>
+    <p>Tanzania's first uranium processing plant, a complete greenfield automation engagement covering the entire production lifecycle from ore receipt through product precipitation.</p>
+    <p><strong style="color:var(--accent);">Scope:</strong> Siemens S7-1500 PLC system controlling all VSDs, DOL motor starters and process instrumentation. WinCC Professional SCADA with full historian configuration. IFM AS-i Bus field network integration. Nidec Control Techniques C200 and C300 VSD integration via Profinet and AS-i. OT-to-IT data bridge using Siemens Industrial Data Bridge to SQL Server for production reporting.</p>
+    <p><strong style="color:var(--accent);">Circuits Covered:</strong> Ore Scrubbing Section &bull; Pre-Thickening Area &bull; Acid Atmospheric Leach Area &bull; Resin-in-Pulp (RIP) Tails and Handling Sections &bull; Elution Circuit &bull; Uranium Precipitation Area &bull; Raw and Process Water Systems &bull; Water Treatment and Potable Water Plants &bull; Tails/Scats Transfer Systems &bull; Excess Water Treatment Area &bull; Sulphuric Acid Dosing Area &bull; Hydrogen Peroxide and Sodium Hydroxide Dosing Areas &bull; Lime Handling System &bull; Compressed Air Plant.</p>
+    <h4>Technologies</h4>
+    <div class="modal-tech">
+      <span class="tech-pill">Siemens S7-1500</span>
+      <span class="tech-pill">TIA Portal v18</span>
+      <span class="tech-pill">WinCC Professional</span>
+      <span class="tech-pill">Profinet</span>
+      <span class="tech-pill">IFM AS-i Bus</span>
+      <span class="tech-pill">Nidec VSDs</span>
+      <span class="tech-pill">Siemens Industrial Data Bridge</span>
+      <span class="tech-pill">SQL Server</span>
+    </div>
+  </div>
+</template>
+
+<template id="modal-odoo">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h2>WinCC Professional ↔ Odoo ERP Integration</h2>
+    <div class="modal-tags">
+      <span class="project-tag">Manufacturing</span>
+      <span class="project-tag">OT/IT Integration</span>
+      <span class="project-tag">United States</span>
+    </div>
+    <p>Bidirectional, real-time integration between Siemens WinCC RT Professional and Odoo ERP for automated batch production and recipe management in a process manufacturing environment.</p>
+    <p><strong style="color:var(--accent);">Inbound (Odoo → WinCC):</strong> Production orders pushed automatically from Odoo MRP module to WinCC. Recipe parameters (component quantities, setpoints, process times) transferred and loaded to PLC recipe management without operator transcription.</p>
+    <p><strong style="color:var(--accent);">Outbound (WinCC → Odoo):</strong> Real-time weighing data, material consumption confirmations, batch completion signals and genealogy data written back to Odoo. Variance analysis and traceability reporting fully automated. Buffering logic implemented to guarantee data integrity during network interruptions.</p>
+    <h4>Technologies</h4>
+    <div class="modal-tech">
+      <span class="tech-pill">WinCC RT Professional</span>
+      <span class="tech-pill">Odoo 16 ERP</span>
+      <span class="tech-pill">Siemens S7-1500</span>
+      <span class="tech-pill">TIA Portal</span>
+      <span class="tech-pill">SQL Server</span>
+      <span class="tech-pill">.NET / C#</span>
+      <span class="tech-pill">OPC-UA</span>
+      <span class="tech-pill">REST API</span>
+    </div>
+  </div>
+</template>
+
+<template id="modal-lime">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h2>Power Station Lime Plant Refurbishment</h2>
+    <div class="modal-tags">
+      <span class="project-tag">Power &amp; Energy</span>
+      <span class="project-tag">Brownfield</span>
+      <span class="project-tag">Mpumalanga</span>
+    </div>
+    <p>Full lifecycle PLC and HMI engineering for the refurbishment of the North and South Lime Plants at a power station in Mpumalanga, a critical auxiliary system supplying neutralisation reagent to the flue gas desulphurisation (FGD) process.</p>
+    <p><strong style="color:var(--accent);">Scope:</strong> Both plants were taken through a structured refurbishment sequence: plant analysis, control engineering, maintenance (valve inspection, leak/seal checks, lubrication), cold commissioning (PLC/HMI backup and download, field instrument loop checks with HART protocol testing), hot commissioning (motor bump tests, valve actuation, interlock and E-stop verification, alarm tests, process sequence validation) and process commissioning (live process tests and loop tuning). Operator training and full documentation produced at handover for each plant.</p>
+    <h4>Technologies</h4>
+    <div class="modal-tech">
+      <span class="tech-pill">Siemens S7 PLC</span>
+      <span class="tech-pill">TIA Portal</span>
+      <span class="tech-pill">WinCC HMI</span>
+      <span class="tech-pill">HART Protocol</span>
+      <span class="tech-pill">Cold &amp; Hot Commissioning</span>
+      <span class="tech-pill">Loop Tuning</span>
+      <span class="tech-pill">Brownfield Integration</span>
+    </div>
+  </div>
+</template>
+
+<template id="modal-finstab">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h2>Ship Fin Stabilizer Optimization</h2>
+    <div class="modal-tags">
+      <span class="project-tag">Marine</span>
+      <span class="project-tag">Remote Engagement</span>
+      <span class="project-tag">Dubai</span>
+    </div>
+    <p>Remote fault-finding and program optimization for dual ship fin stabilizers operating on a legacy Siemens S5 PLC platform, delivered entirely remotely for a marine client based in Dubai.</p>
+    <p><strong style="color:var(--accent);">Scope:</strong> Diagnostic analysis of legacy Siemens S5 PLC programs controlling a pair of refurbished ship fin stabilizers. Identification of control logic faults contributing to incorrect fin actuation and instability. Program optimization to restore correct stabilizer performance across both units, with all engineering work carried out via remote access.</p>
+    <h4>Technologies</h4>
+    <div class="modal-tech">
+      <span class="tech-pill">Siemens S5 PLC</span>
+      <span class="tech-pill">PLC Fault Diagnostics</span>
+      <span class="tech-pill">Program Optimization</span>
+      <span class="tech-pill">Remote Engineering</span>
+      <span class="tech-pill">Marine Control Systems</span>
+    </div>
+  </div>
+</template>
+
+<template id="modal-blinkpan">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h2>Wastewater Treatment Plant EC&amp;I</h2>
+    <div class="modal-tags">
+      <span class="project-tag">Water &amp; Wastewater</span>
+      <span class="project-tag">Full EC&amp;I</span>
+      <span class="project-tag">Mpumalanga</span>
+      <span class="project-tag">Cybersecurity</span>
+    </div>
+    <p>Full EC&amp;I engineering specification for a complete plant overhaul at a Wastewater Treatment Works in Mpumalanga, covering electrical, instrumentation, control and network design disciplines.</p>
+    <p><strong style="color:var(--accent);">Electrical Engineering:</strong> MCC and PLC control panel design in EPLAN Electric P8 and Pro Panel. Power quality measuring system specification and integration. Cable schedule and field instrumentation network design.</p>
+    <p><strong style="color:var(--accent);">Automation &amp; Control:</strong> Siemens S7-1500 with ET200 distributed I/O architecture. WinCC Unified SCADA with full operator interface and historian. Cybersecurity hardening: network segmentation (IEC 62443 framework), firewall rules, OT DMZ, remote access VPN.</p>
+    <h4>Technologies</h4>
+    <div class="modal-tech">
+      <span class="tech-pill">Siemens S7-1500</span>
+      <span class="tech-pill">ET200 Distributed I/O</span>
+      <span class="tech-pill">WinCC Unified</span>
+      <span class="tech-pill">EPLAN Electric P8</span>
+      <span class="tech-pill">EPLAN Pro Panel</span>
+      <span class="tech-pill">IEC 62443</span>
+      <span class="tech-pill">Profinet</span>
+      <span class="tech-pill">OT Cybersecurity</span>
+    </div>
+  </div>
+</template>
+
+<main>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="section-eyebrow">Projects Portfolio</div>
+    <h1>Delivered Projects</h1>
+    <p>Real-world automation challenges, solved end-to-end. From greenfield plant builds to complex OT/IT integration programmes.</p>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="section section-darker">
+  <div class="container">
+
+    <div class="filter-bar fade-up">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="mining">Mining</button>
+      <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+      <button class="filter-btn" data-filter="energy">Power &amp; Energy</button>
+      <button class="filter-btn" data-filter="water">Water &amp; Wastewater</button>
+      <button class="filter-btn" data-filter="marine">Marine</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card fade-up" data-industry="mining" data-modal="modal-uranium">
+        <div class="project-thumb">
+          <i class="fa-solid fa-helmet-safety project-thumb-icon"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Mining</span>
+            <span class="project-tag">Full Lifecycle</span>
+            <span class="project-tag">Tanzania</span>
+          </div>
+          <h3>Uranium Plant Automation</h3>
+          <p>Tanzania's first uranium processing plant. Complete automation from ore scrubbing through uranium precipitation. Siemens S7-1500, WinCC Professional SCADA, IFM AS-i Bus, Nidec Control Techniques VSDs and OT-to-SQL integration.</p>
+          <span class="link-arrow">View Full Detail <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up d1" data-industry="manufacturing" data-modal="modal-odoo">
+        <div class="project-thumb">
+          <i class="fa-solid fa-arrow-right-arrow-left project-thumb-icon"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Manufacturing</span>
+            <span class="project-tag">OT/IT Integration</span>
+            <span class="project-tag">United States</span>
+          </div>
+          <h3>WinCC Professional ↔ Odoo ERP Integration</h3>
+          <p>Bidirectional integration between Siemens WinCC RT Professional and Odoo ERP. Automated batch production, recipe management, real-time weighing data, material consumption and batch genealogy with data integrity buffering logic.</p>
+          <span class="link-arrow">View Full Detail <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up" data-industry="energy" data-modal="modal-lime">
+        <div class="project-thumb">
+          <i class="fa-solid fa-bolt project-thumb-icon"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Power &amp; Energy</span>
+            <span class="project-tag">Brownfield</span>
+            <span class="project-tag">Mpumalanga</span>
+          </div>
+          <h3>Power Station Lime Plant Refurbishment</h3>
+          <p>Full lifecycle refurbishment of the North and South Lime Plants at a power station in Mpumalanga, spanning control engineering, cold and hot commissioning, HART instrument loop checks, interlock verification, live process testing, loop tuning and operator handover.</p>
+          <span class="link-arrow">View Full Detail <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up d1" data-industry="water" data-modal="modal-blinkpan">
+        <div class="project-thumb">
+          <i class="fa-solid fa-droplet project-thumb-icon"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Water &amp; Wastewater</span>
+            <span class="project-tag">Full EC&amp;I</span>
+            <span class="project-tag">Mpumalanga</span>
+          </div>
+          <h3>Wastewater Treatment EC&amp;I</h3>
+          <p>Full EC&amp;I specification for a WWTP overhaul in Mpumalanga. MCC and PLC panel design in EPLAN, power quality measuring, Siemens S7-1500 with ET200 distributed I/O, WinCC Unified SCADA and full OT cybersecurity hardening per IEC 62443.</p>
+          <span class="link-arrow">View Full Detail <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up" data-industry="marine" data-modal="modal-finstab">
+        <div class="project-thumb">
+          <i class="fa-solid fa-ship project-thumb-icon"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Marine</span>
+            <span class="project-tag">Remote Engagement</span>
+            <span class="project-tag">Dubai</span>
+          </div>
+          <h3>Ship Fin Stabilizer Optimization</h3>
+          <p>Fault finding and program optimization for dual ship fin stabilizers on a legacy Siemens S5 PLC, delivered entirely remotely for a client based in Dubai.</p>
+          <span class="link-arrow">View Full Detail <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;" class="fade-up">
+      <p style="color:rgba(255,255,255,0.45); margin-bottom:1.25rem;">Have a project in mind? We'd love to hear about it.</p>
+      <a href="index.html#contact" class="btn btn-gold btn-lg">Start the Conversation <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="images/logo-color.png" alt="Mechatrolix" class="nav-logo-img"></a>
+        <div class="footer-tagline">Innovate. Automate. Elevate.</div>
+        <p>Specialist industrial automation consultancy delivering compliant, robust and maintainable solutions across Southern Africa.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/mechatrolix" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:info@mechatrolix.co.za" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://wa.me/27764275011" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p class="footer-reg">Reg: K2017517102</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="industries.html">Industries &amp; Expertise</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Functional Safety</a></li>
+          <li><a href="index.html#services">PLC / DCS Programming</a></li>
+          <li><a href="index.html#services">SCADA / HMI</a></li>
+          <li><a href="index.html#services">EC&amp;I Specification</a></li>
+          <li><a href="index.html#services">FANUC Robotics</a></li>
+          <li><a href="index.html#services">Commissioning / PM</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+27764275011">+27 76 427 5011</a></li>
+          <li><a href="mailto:info@mechatrolix.co.za">info@mechatrolix.co.za</a></li>
+          <li><a href="https://wa.me/27764275011" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://linkedin.com/company/mechatrolix" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mechatrolix. All rights reserved.</p>
+      <p>Reg: K2017517102, South Africa</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
