@@ -1212,3 +1212,38 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   .filter-bar        { justify-content: center; }
   .hero h1           { font-size: 1.65rem; }
 }
+
+/* ============================================================
+   INNER PAGES — LIGHTER CONTENT SECTIONS
+   ============================================================ */
+.inner-page .section-darker { background: var(--off-white); }
+
+.inner-page .blog-card,
+.inner-page .project-card {
+  background: var(--white);
+  border-color: rgba(0,0,0,0.09);
+  box-shadow: var(--shadow);
+}
+.inner-page .blog-card:hover  { border-color: rgba(212,160,23,0.4); }
+.inner-page .project-card:hover { border-color: rgba(212,160,23,0.4); }
+.inner-page .blog-card h3,
+.inner-page .project-card h3 { color: var(--text-dark); }
+.inner-page .blog-card p,
+.inner-page .project-card p  { color: var(--text-mid); }
+.inner-page .blog-date,
+.inner-page .blog-rt   { color: rgba(0,0,0,0.42); }
+.inner-page .blog-author     { color: rgba(0,0,0,0.5); }
+.inner-page .blog-footer     { border-color: rgba(0,0,0,0.09); }
+
+.inner-page .ind-card {
+  background: var(--white);
+  border-color: rgba(0,0,0,0.09);
+  box-shadow: var(--shadow);
+}
+.inner-page .ind-card:hover  { background: rgba(212,160,23,0.06); border-color: var(--accent); }
+.inner-page .ind-card h3     { color: var(--text-dark); }
+.inner-page .ind-card p      { color: var(--text-mid); }
+
+.inner-page .filter-btn      { color: var(--text-mid); border-color: rgba(0,0,0,0.15); }
+.inner-page .filter-btn.active,
+.inner-page .filter-btn:hover { color: var(--accent-dark); border-color: var(--accent); background: rgba(212,160,23,0.07); }
