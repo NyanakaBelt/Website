@@ -283,6 +283,9 @@ contactForm?.addEventListener('submit', async e => {
     if (!field.value.trim()) {
       field.classList.add('input-error');
       valid = false;
+    } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+      field.classList.add('input-error');
+      valid = false;
     }
   });
   if (!valid) return;
