@@ -716,6 +716,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
 .form-group select option { background: var(--primary-dark); color: var(--white); }
 .form-group textarea { resize: vertical; min-height: 110px; }
 .form-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 0.75rem; }
+.input-error { border-color: #e05252 !important; }
 .form-success {
   display: none;
   text-align: center;

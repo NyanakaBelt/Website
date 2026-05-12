@@ -267,10 +267,25 @@ function closeModal() {
    CONTACT FORM (formsubmit.co AJAX)
    ============================================================ */
 const contactForm = document.getElementById('contactForm');
+contactForm?.querySelectorAll('[required]').forEach(field => {
+  field.addEventListener('input', () => field.classList.remove('input-error'));
+});
 contactForm?.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = contactForm.querySelector('[type="submit"]');
   const successEl = document.getElementById('formSuccess');
+
+  /* Validate required fields */
+  const required = contactForm.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(field => {
+    field.classList.remove('input-error');
+    if (!field.value.trim()) {
+      field.classList.add('input-error');
+      valid = false;
+    }
+  });
+  if (!valid) return;
 
   btn.textContent = 'Sending…';
   btn.disabled = true;
