@@ -272,49 +272,56 @@ function closeModal() {
   if (!contactForm) return;
 
   const emailInput = document.getElementById('femail');
-  let emailState   = 'idle';
-  let verifyTimer  = null;
+  let emailState = 'idle';
 
   /* Clear error styling on re-type */
   contactForm.querySelectorAll('[required]').forEach(field => {
     field.addEventListener('input', () => field.classList.remove('input-error'));
   });
 
-  /* ── Emailable event listeners ── */
+  /* ── Hunter.io email verification ── */
   if (emailInput) {
+    const HUNTER_KEY = '63527896cb164ec44633cb9ad506e8f591ac74be';
+
+    /* Reset state whenever the user edits the email */
     emailInput.addEventListener('input', () => {
-      clearTimeout(verifyTimer);
       emailInput.classList.remove('vf-verified', 'vf-checking');
       emailState = 'idle';
+    });
 
+    /* Verify when the user leaves the field */
+    emailInput.addEventListener('blur', async () => {
       const val = emailInput.value.trim();
-      if (val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-        verifyTimer = setTimeout(() => {
-          emailInput.classList.add('vf-checking');
-          emailState = 'verifying';
-        }, 150);
-      }
-    });
+      if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return;
+      if (emailState !== 'idle') return;
 
-    emailInput.addEventListener('verified', e => {
-      clearTimeout(verifyTimer);
-      emailInput.classList.remove('vf-checking');
-      if (e.detail && e.detail.accepted) {
-        emailState = 'accepted';
-        emailInput.classList.add('vf-verified');
-        emailInput.classList.remove('input-error');
-      } else {
-        emailState = 'rejected';
-        emailInput.classList.remove('vf-verified');
-        emailInput.classList.add('input-error');
-      }
-    });
+      emailState = 'verifying';
+      emailInput.classList.add('vf-checking');
+      emailInput.classList.remove('vf-verified', 'input-error');
 
-    /* Fail open on API / network errors */
-    emailInput.addEventListener('error', () => {
-      clearTimeout(verifyTimer);
-      emailInput.classList.remove('vf-checking');
-      emailState = 'error';
+      try {
+        const res  = await fetch(
+          `https://api.hunter.io/v2/email-verifier?email=${encodeURIComponent(val)}&api_key=${HUNTER_KEY}`
+        );
+        const json = await res.json();
+        emailInput.classList.remove('vf-checking');
+
+        if (json.errors) throw new Error('api-error');
+
+        const result = json.data && json.data.result;
+        if (result === 'undeliverable') {
+          emailState = 'rejected';
+          emailInput.classList.add('input-error');
+        } else if (result === 'deliverable') {
+          emailState = 'accepted';
+          emailInput.classList.add('vf-verified');
+        } else {
+          emailState = 'accepted'; /* risky / accept_all / unknown — pass through */
+        }
+      } catch {
+        emailInput.classList.remove('vf-checking');
+        emailState = 'error'; /* fail open on network / API errors */
+      }
     });
   }
 

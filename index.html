@@ -558,30 +558,7 @@
   </div>
 </footer>
 
-<!-- ============================================================
-     EMAILABLE EMAIL VERIFICATION WIDGET
-     1. Sign up free at https://app.emailable.com
-     2. Go to API Keys → copy your Public key
-     3. Replace YOUR_PUBLIC_API_KEY below
-     ============================================================ -->
-<script>
-  (function (w, d, ns) {
-    w['EmailableObject'] = ns;
-    w[ns] = w[ns] || function () { (w[ns].q = w[ns].q || []).push(arguments) };
-    var s = d.createElement('script'), fs = d.getElementsByTagName('script')[0];
-    s.async = 1; s.src = 'https://js.emailable.com/v2/';
-    fs.parentNode.insertBefore(s, fs);
-  })(window, document, 'emailable');
-
-  emailable('apiKey', 'live_3e119b458d8f62e7305d');
-  emailable('verifyAfterDelay', 600);
-  emailable('allow', {
-    states:     ['deliverable'],
-    free:       true,
-    role:       true,
-    disposable: false
-  });
-</script>
+<!-- Hunter.io email verification is handled in js/main.js -->
 <script src="js/main.js"></script>
 </body>
 </html>
