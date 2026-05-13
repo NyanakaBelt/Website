@@ -288,7 +288,7 @@ contactForm?.addEventListener('submit', async e => {
         field.classList.add('input-error');
         valid = false;
       } else if (field.validationMessage) {
-        /* Verifalia has flagged this address (still verifying or undeliverable) */
+        /* Emailable has flagged this address (still verifying or undeliverable) */
         field.classList.add('input-error');
         valid = false;
       }
@@ -318,3 +318,54 @@ contactForm?.addEventListener('submit', async e => {
     btn.disabled    = false;
   }
 });
+
+/* ============================================================
+   EMAILABLE EMAIL VERIFICATION
+   ============================================================ */
+(function () {
+  const emailInput = document.getElementById('femail');
+  if (!emailInput) return;
+
+  let verifyTimer = null;
+
+  /* Show amber "checking" state once typing pauses and format looks valid */
+  emailInput.addEventListener('input', () => {
+    clearTimeout(verifyTimer);
+    emailInput.classList.remove('vf-verified');
+    emailInput.setCustomValidity('');
+
+    const val = emailInput.value.trim();
+    if (val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      verifyTimer = setTimeout(() => {
+        emailInput.classList.add('vf-checking');
+        emailInput.setCustomValidity('Verifying email address…');
+      }, 150);
+    } else {
+      emailInput.classList.remove('vf-checking');
+    }
+  });
+
+  /* Handle Emailable verification result */
+  emailInput.addEventListener('verified', (e) => {
+    clearTimeout(verifyTimer);
+    emailInput.classList.remove('vf-checking');
+    if (e.detail && e.detail.accepted) {
+      emailInput.classList.add('vf-verified');
+      emailInput.setCustomValidity('');
+    } else {
+      emailInput.classList.remove('vf-verified');
+      emailInput.classList.add('input-error');
+      emailInput.setCustomValidity(
+        (e.detail && e.detail.message) ||
+        'This email address cannot receive messages – please check it.'
+      );
+    }
+  });
+
+  /* Fail open on API errors so users aren't blocked */
+  emailInput.addEventListener('error', () => {
+    clearTimeout(verifyTimer);
+    emailInput.classList.remove('vf-checking');
+    emailInput.setCustomValidity('');
+  });
+})();

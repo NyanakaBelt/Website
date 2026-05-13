@@ -559,34 +559,29 @@
 </footer>
 
 <!-- ============================================================
-     VERIFALIA EMAIL VERIFICATION WIDGET
-     Steps to activate:
-       1. Create a free account at https://verifalia.com
-       2. Go to Dashboard → Client Areas → Browser Apps → New browser app
-       3. Replace YOUR_BROWSER_APP_KEY below with your actual app key
+     EMAILABLE EMAIL VERIFICATION WIDGET
+     1. Sign up free at https://app.emailable.com
+     2. Go to API Keys → copy your Public key
+     3. Replace YOUR_PUBLIC_API_KEY below
      ============================================================ -->
 <script>
-  window.VerifaliaWidgetConfig = {
-    appKey: '1e843ea356084efd8d0fe2f130821f44',
-    inputBindings: {
-      autoWireup:        true,
-      preventSubmission: 'invalid, throttled',
-      debounceTime:      400,
-      classNames: {
-        processing: 'vf-checking',
-        valid:      'vf-verified',
-        invalid:    'input-error',
-        throttled:  'vf-checking'
-      },
-      messages: {
-        processing: 'Verifying email address…',
-        invalid:    'This email address cannot receive messages – please check it.',
-        throttled:  'Verification unavailable right now – please try again shortly.'
-      }
-    }
-  };
+  (function (w, d, ns) {
+    w['EmailableObject'] = ns;
+    w[ns] = w[ns] || function () { (w[ns].q = w[ns].q || []).push(arguments) };
+    var s = d.createElement('script'), fs = d.getElementsByTagName('script')[0];
+    s.async = 1; s.src = 'https://js.emailable.com/v2/';
+    fs.parentNode.insertBefore(s, fs);
+  })(window, document, 'emailable');
+
+  emailable('apiKey', 'YOUR_PUBLIC_API_KEY');
+  emailable('verifyAfterDelay', 600);
+  emailable('allow', {
+    states:     ['deliverable'],
+    free:       true,
+    role:       true,
+    disposable: false
+  });
 </script>
-<script src="https://unpkg.com/verifalia-widget"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
