@@ -558,6 +558,32 @@
   </div>
 </footer>
 
+<!-- ============================================================
+     VERIFALIA EMAIL VERIFICATION WIDGET
+     Steps to activate:
+       1. Create a free account at https://verifalia.com
+       2. Go to Dashboard → Client Areas → Browser Apps → New browser app
+       3. Replace YOUR_BROWSER_APP_KEY below with your actual app key
+     ============================================================ -->
+<script>
+  window.VerifaliaWidgetConfig = {
+    appKey: '1e843ea356084efd8d0fe2f130821f44',
+    inputBindings: {
+      preventSubmission: 'Undeliverable',
+      debounceTime: 400,
+      classNames: {
+        processing: 'vf-checking',
+        valid:      'vf-verified',
+        invalid:    'input-error'
+      },
+      messages: {
+        processing: 'Verifying email address…',
+        invalid:    'This email address cannot receive messages – please check it.'
+      }
+    }
+  };
+</script>
+<script src="https://unpkg.com/verifalia-widget"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

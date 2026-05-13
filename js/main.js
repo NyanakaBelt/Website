@@ -283,9 +283,15 @@ contactForm?.addEventListener('submit', async e => {
     if (!field.value.trim()) {
       field.classList.add('input-error');
       valid = false;
-    } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
-      field.classList.add('input-error');
-      valid = false;
+    } else if (field.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+        field.classList.add('input-error');
+        valid = false;
+      } else if (field.validationMessage) {
+        /* Verifalia has flagged this address (still verifying or undeliverable) */
+        field.classList.add('input-error');
+        valid = false;
+      }
     }
   });
   if (!valid) return;
