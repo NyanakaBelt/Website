@@ -569,16 +569,20 @@
   window.VerifaliaWidgetConfig = {
     appKey: '1e843ea356084efd8d0fe2f130821f44',
     inputBindings: {
-      preventSubmission: 'Undeliverable',
+      preventSubmission: 'invalid, throttled',
       debounceTime: 400,
+      styling: false,
       classNames: {
+        base:       '',
         processing: 'vf-checking',
         valid:      'vf-verified',
-        invalid:    'input-error'
+        invalid:    'input-error',
+        throttled:  'vf-checking'
       },
       messages: {
         processing: 'Verifying email address…',
-        invalid:    'This email address cannot receive messages – please check it.'
+        invalid:    'This email address cannot receive messages – please check it.',
+        throttled:  'Verification unavailable right now – please try again shortly.'
       }
     }
   };
