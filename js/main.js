@@ -264,108 +264,115 @@ function closeModal() {
 })();
 
 /* ============================================================
-   CONTACT FORM (formsubmit.co AJAX)
+   CONTACT FORM + EMAILABLE EMAIL VERIFICATION
+   emailState: 'idle' | 'verifying' | 'accepted' | 'rejected' | 'error'
    ============================================================ */
-const contactForm = document.getElementById('contactForm');
-contactForm?.querySelectorAll('[required]').forEach(field => {
-  field.addEventListener('input', () => field.classList.remove('input-error'));
-});
-contactForm?.addEventListener('submit', async e => {
-  e.preventDefault();
-  const btn = contactForm.querySelector('[type="submit"]');
-  const successEl = document.getElementById('formSuccess');
+(function () {
+  const contactForm = document.getElementById('contactForm');
+  if (!contactForm) return;
 
-  /* Validate required fields */
-  const required = contactForm.querySelectorAll('[required]');
-  let valid = true;
-  required.forEach(field => {
-    field.classList.remove('input-error');
-    if (!field.value.trim()) {
-      field.classList.add('input-error');
-      valid = false;
-    } else if (field.type === 'email') {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+  const emailInput = document.getElementById('femail');
+  let emailState   = 'idle';
+  let verifyTimer  = null;
+
+  /* Clear error styling on re-type */
+  contactForm.querySelectorAll('[required]').forEach(field => {
+    field.addEventListener('input', () => field.classList.remove('input-error'));
+  });
+
+  /* ── Emailable event listeners ── */
+  if (emailInput) {
+    emailInput.addEventListener('input', () => {
+      clearTimeout(verifyTimer);
+      emailInput.classList.remove('vf-verified', 'vf-checking');
+      emailState = 'idle';
+
+      const val = emailInput.value.trim();
+      if (val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+        verifyTimer = setTimeout(() => {
+          emailInput.classList.add('vf-checking');
+          emailState = 'verifying';
+        }, 150);
+      }
+    });
+
+    emailInput.addEventListener('verified', e => {
+      clearTimeout(verifyTimer);
+      emailInput.classList.remove('vf-checking');
+      if (e.detail && e.detail.accepted) {
+        emailState = 'accepted';
+        emailInput.classList.add('vf-verified');
+        emailInput.classList.remove('input-error');
+      } else {
+        emailState = 'rejected';
+        emailInput.classList.remove('vf-verified');
+        emailInput.classList.add('input-error');
+      }
+    });
+
+    /* Fail open on API / network errors */
+    emailInput.addEventListener('error', () => {
+      clearTimeout(verifyTimer);
+      emailInput.classList.remove('vf-checking');
+      emailState = 'error';
+    });
+  }
+
+  /* ── Form submit ── */
+  contactForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn       = contactForm.querySelector('[type="submit"]');
+    const successEl = document.getElementById('formSuccess');
+
+    /* Required fields + email format */
+    let valid = true;
+    contactForm.querySelectorAll('[required]').forEach(field => {
+      field.classList.remove('input-error');
+      if (!field.value.trim()) {
         field.classList.add('input-error');
         valid = false;
-      } else if (field.validationMessage) {
-        /* Emailable has flagged this address (still verifying or undeliverable) */
+      } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
         field.classList.add('input-error');
         valid = false;
       }
-    }
-  });
-  if (!valid) return;
-
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-
-  try {
-    const res = await fetch('https://formsubmit.co/ajax/info@mechatrolix.co.za', {
-      method:  'POST',
-      body:    new FormData(contactForm),
-      headers: { 'Accept': 'application/json' },
     });
-    if (res.ok) {
-      contactForm.reset();
-      if (successEl) successEl.style.display = 'block';
-    } else {
-      throw new Error('server error');
-    }
-  } catch {
-    contactForm.submit(); /* fallback to standard POST */
-  } finally {
-    btn.textContent = 'Send Message';
-    btn.disabled    = false;
-  }
-});
+    if (!valid) return;
 
-/* ============================================================
-   EMAILABLE EMAIL VERIFICATION
-   ============================================================ */
-(function () {
-  const emailInput = document.getElementById('femail');
-  if (!emailInput) return;
-
-  let verifyTimer = null;
-
-  /* Show amber "checking" state once typing pauses and format looks valid */
-  emailInput.addEventListener('input', () => {
-    clearTimeout(verifyTimer);
-    emailInput.classList.remove('vf-verified');
-    emailInput.setCustomValidity('');
-
-    const val = emailInput.value.trim();
-    if (val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-      verifyTimer = setTimeout(() => {
+    /* Emailable state gate */
+    if (emailInput) {
+      if (emailState === 'rejected') {
+        emailInput.classList.add('input-error');
+        return;
+      }
+      if (emailState === 'idle' || emailState === 'verifying') {
+        /* Still waiting for verification — show amber and block */
         emailInput.classList.add('vf-checking');
-        emailInput.setCustomValidity('Verifying email address…');
-      }, 150);
-    } else {
-      emailInput.classList.remove('vf-checking');
+        return;
+      }
+      /* 'accepted' and 'error' (fail-open) fall through */
     }
-  });
 
-  /* Handle Emailable verification result */
-  emailInput.addEventListener('verified', (e) => {
-    clearTimeout(verifyTimer);
-    emailInput.classList.remove('vf-checking');
-    if (e.detail && e.detail.accepted) {
-      emailInput.classList.add('vf-verified');
-      emailInput.setCustomValidity('');
-    } else {
-      emailInput.classList.remove('vf-verified');
-      emailInput.classList.add('input-error');
-      emailInput.setCustomValidity(
-        (e.detail && e.detail.message) ||
-        'This email address cannot receive messages – please check it.'
-      );
+    btn.textContent = 'Sending…';
+    btn.disabled    = true;
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@mechatrolix.co.za', {
+        method:  'POST',
+        body:    new FormData(contactForm),
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        contactForm.reset();
+        emailState = 'idle';
+        if (successEl) successEl.style.display = 'block';
+      } else {
+        throw new Error('server error');
+      }
+    } catch {
+      contactForm.submit(); /* fallback to standard POST */
+    } finally {
+      btn.textContent = 'Send Message';
+      btn.disabled    = false;
     }
-  });
-
-  /* Fail open on API errors so users aren't blocked */
-  emailInput.addEventListener('error', () => {
-    clearTimeout(verifyTimer);
-    emailInput.classList.remove('vf-checking');
-    emailInput.setCustomValidity('');
   });
 })();
