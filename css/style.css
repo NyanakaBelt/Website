@@ -1139,6 +1139,136 @@ input.vf-verified { border-color: #5cb85c !important; }
 }
 
 /* ============================================================
+   B-BBEE CREDENTIALS
+   ============================================================ */
+.bbbee-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.bbbee-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.bbbee-badge {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #a07810, #d4a017, #f0be40, #d4a017, #a07810);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 50px rgba(212,160,23,0.4), 0 0 100px rgba(212,160,23,0.14);
+}
+.bbbee-badge::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: var(--primary-dark);
+}
+.bbbee-badge-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0;
+}
+.bbbee-badge-abbr {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.bbbee-badge-level-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  color: rgba(212,160,23,0.6);
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+}
+.bbbee-badge-number {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 5.5rem;
+  line-height: 0.95;
+  color: var(--white);
+  margin: 0.05rem 0;
+}
+.bbbee-badge-contributor {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.bbbee-badge-stars {
+  display: flex;
+  gap: 3px;
+  margin-top: 0.4rem;
+  color: var(--accent);
+  font-size: 0.58rem;
+}
+.bbbee-cert-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.32);
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.bbbee-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.bbbee-benefit {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.bbbee-benefit-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(212,160,23,0.12);
+  border: 1px solid rgba(212,160,23,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+}
+.bbbee-benefit strong {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.02em;
+}
+.bbbee-benefit span {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+/* ============================================================
    FADE-UP ANIMATIONS
    ============================================================ */
 .fade-up {
@@ -1159,6 +1289,8 @@ input.vf-verified { border-color: #5cb85c !important; }
 @media (max-width: 1024px) {
   .services-grid        { grid-template-columns: repeat(2, 1fr); }
   .standards-grid       { grid-template-columns: 1fr; }
+  .bbbee-grid           { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bbbee-badge-wrap     { flex-direction: row; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
   .ind-preview-grid     { grid-template-columns: repeat(3, 1fr); }
   .ind-full-grid        { grid-template-columns: repeat(3, 1fr); }
   .footer-grid          { grid-template-columns: 1fr 1fr; gap: 2rem; }
