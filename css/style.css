@@ -1384,3 +1384,138 @@ input.vf-verified { border-color: #5cb85c !important; }
 .inner-page .filter-btn:hover { color: var(--accent-dark); border-color: var(--accent); background: rgba(212,160,23,0.07); }
 
 .inner-page .footer { background: var(--primary-dark); }
+
+/* ============================================================
+   GLOBAL FOOTPRINT MAP
+   ============================================================ */
+.map-section {
+  /* Deep brand-plum backdrop: soft central glow lifts the map, vignette deepens the edges */
+  position: relative;
+  isolation: isolate;
+  background-color: #281430;
+  background-image:
+    radial-gradient(ellipse 66% 54% at 50% 44%, rgba(116,46,102,0.42) 0%, transparent 66%),
+    radial-gradient(ellipse 130% 125% at 50% 48%, transparent 48%, rgba(8,3,14,0.7) 100%),
+    linear-gradient(165deg, #3b2344 0%, #190b24 100%);
+  text-align: center;
+  overflow: hidden;
+}
+/* Ghost-continent texture — a large, soft copy of the world map behind everything */
+.map-section::before {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  pointer-events: none;
+  background: url("../images/map-bg.svg") center 46% / 170% auto no-repeat;
+  opacity: 0.55;
+  filter: blur(1.2px);
+  mix-blend-mode: multiply;
+}
+/* Faint lat/long graticule */
+.map-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(to right,  rgba(212,160,23,0.10) 0 1px, transparent 1px 12.5%),
+    repeating-linear-gradient(to bottom, rgba(212,160,23,0.10) 0 1px, transparent 1px 20%);
+}
+.map-section > .container { position: relative; z-index: 1; }
+.map-section .section-eyebrow { display: inline-flex; justify-content: center; }
+.map-heading { color: var(--white); margin-bottom: 0.75rem; }
+.map-subhead {
+  color: var(--text-light);
+  max-width: 640px;
+  margin: 0 auto 2.75rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+.map-wrap { position: relative; max-width: 980px; margin: 0 auto; }
+
+.world-map-svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* Base countries — light lavender land with subtle borders */
+.world-map-svg path {
+  fill: #d6cee2;
+  stroke: rgba(70,40,70,0.45);
+  stroke-width: 0.5;
+  transition: filter 0.25s ease;
+}
+
+/* Highlighted project countries — metallic brand gold */
+#world-map #us,  #world-map #us path,
+#world-map #tz,
+#world-map #za,
+#world-map #ae {
+  fill: var(--accent);
+  stroke: var(--accent-dark);
+  stroke-width: 0.5;
+  cursor: pointer;
+}
+#world-map #us:hover path, #world-map #us path:hover,
+#world-map #tz:hover,
+#world-map #za:hover,
+#world-map #ae:hover { fill: var(--accent-light); }
+
+/* Tooltip */
+.map-tooltip {
+  position: absolute;
+  z-index: 20;
+  left: 0; top: 0;
+  min-width: 190px;
+  max-width: 290px;
+  background: rgba(13,4,16,0.96);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+.map-tooltip.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.map-tooltip .mt-country {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--accent-light);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.1rem;
+}
+.map-tooltip .mt-client {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.5rem;
+}
+.map-tooltip .mt-scope {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.5;
+}
+
+/* Legend */
+.map-legend {
+  display: flex;
+  gap: 1.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.map-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+.map-swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+.map-swatch-active { background: var(--accent); }
+.map-swatch-base   { background: #d6cee2; }

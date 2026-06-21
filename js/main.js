@@ -215,6 +215,89 @@ function closeModal() {
 }
 
 /* ============================================================
+   GLOBAL FOOTPRINT MAP — hover tooltip + click-through to modal
+   ============================================================ */
+(function initFootprintMap() {
+  const svg = document.getElementById('world-map');
+  const tip = document.getElementById('mapTooltip');
+  if (!svg || !tip) return;
+  const wrap = svg.closest('.map-wrap') || svg.parentElement;
+
+  /* country (ISO id) → engagement. No client is ever named publicly. */
+  const DATA = {
+    us: {
+      country: 'United States',
+      client:  'Confidential Client',
+      scope:   'Bidirectional WinCC ↔ Odoo ERP integration — automated batch production, recipe management and batch genealogy.',
+      modal:   'modal-odoo',
+    },
+    tz: {
+      country: 'Tanzania',
+      client:  'Confidential Client',
+      scope:   "Tanzania's first uranium processing plant — full greenfield automation on Siemens S7-1500 with WinCC SCADA.",
+      modal:   'modal-uranium',
+    },
+    ae: {
+      country: 'United Arab Emirates',
+      client:  'Fatila Techno Solutions',
+      scope:   'Remote fault-finding and program optimization for dual ship fin stabilizers on a legacy Siemens S5 PLC (Dubai).',
+      modal:   'modal-finstab',
+    },
+    za: {
+      country: 'South Africa',
+      client:  'Confidential Client',
+      scope:   'Two Mpumalanga engagements — power station lime plant refurbishment and a wastewater treatment plant EC&I overhaul.',
+      modal:   'modal-lime',
+    },
+  };
+
+  function showTip(d) {
+    tip.innerHTML =
+      `<div class="mt-country">${d.country}</div>` +
+      `<div class="mt-client">${d.client}</div>` +
+      `<div class="mt-scope">${d.scope}</div>`;
+    tip.classList.add('show');
+  }
+
+  function moveTip(e) {
+    const r  = wrap.getBoundingClientRect();
+    const tw = tip.offsetWidth;
+    const th = tip.offsetHeight;
+    let x = e.clientX - r.left + 16;
+    let y = e.clientY - r.top  + 16;
+    if (x + tw > r.width)  x = e.clientX - r.left - tw - 16;
+    if (y + th > r.height) y = e.clientY - r.top  - th - 16;
+    if (y < 0) y = 8;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+
+  function hideTip() { tip.classList.remove('show'); }
+
+  function openModal(d) {
+    if (!modalOverlay || !d.modal) return;
+    const tpl = document.getElementById(d.modal);
+    if (!tpl) return;
+    modalOverlay.innerHTML = '';
+    modalOverlay.appendChild(tpl.content ? tpl.content.cloneNode(true) : tpl.cloneNode(true));
+    modalOverlay.classList.add('open');
+    modalOverlay.querySelector('.modal-close')?.addEventListener('click', closeModal);
+  }
+
+  Object.keys(DATA).forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const d = DATA[id];
+    el.classList.add('has-project');
+    el.style.cursor = 'pointer';
+    el.addEventListener('mouseenter', () => showTip(d));
+    el.addEventListener('mousemove',  moveTip);
+    el.addEventListener('mouseleave', hideTip);
+    el.addEventListener('click',      () => openModal(d));
+  });
+})();
+
+/* ============================================================
    ABOUT SLIDESHOW
    ============================================================ */
 (function initAboutSlideshow() {
