@@ -169,6 +169,43 @@ if (canvas) {
 }
 
 /* ============================================================
+   METRIC COUNT-UP
+   ============================================================ */
+(function initCounters() {
+  const counters = document.querySelectorAll('.h-count');
+  if (!counters.length) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function run(el) {
+    const target = parseFloat(el.dataset.target) || 0;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    if (reduce) { el.textContent = prefix + target + suffix; return; }
+    const dur = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3); /* easeOutCubic */
+      el.textContent = prefix + Math.round(eased * target) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if ('IntersectionObserver' in window) {
+    const cObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { run(entry.target); cObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => cObs.observe(c));
+  } else {
+    counters.forEach(run);
+  }
+})();
+
+/* ============================================================
    PROJECT FILTER
    ============================================================ */
 const filterBtns  = document.querySelectorAll('.filter-btn');

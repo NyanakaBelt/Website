@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mechatrolix | Industrial Automation Consultancy</title>
   <meta name="description" content="Mechatrolix is a specialist industrial automation consultancy offering PLC programming, SCADA development, functional safety, robotics and EC&I services across Africa.">
-  <meta name="keywords" content="industrial automation, PLC programming, SCADA, functional safety, IEC 61511, ISO 13849, FANUC robots, Africa">
+  <meta name="keywords" content="industrial automation, PLC programming, SCADA, functional safety, IEC 61511, ISO 13849, industrial robotics, Africa">
   <meta property="og:title" content="Mechatrolix | Industrial Automation Consultancy">
   <meta property="og:description" content="End-to-end industrial automation from certified functional safety design to full plant commissioning.">
   <meta property="og:type" content="website">
@@ -13,11 +13,12 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
+<body class="home">
 
 <!-- ============================================================
      NAVBAR
@@ -54,134 +55,58 @@
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section id="home" class="hero">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge fade-up">
-      <i class="fa-solid fa-circle-dot"></i>
-      Innovate. Automate. Elevate.
-    </div>
-    <h1 class="fade-up d1">Quality Oriented and Scalable<br><em>Full Stack Automation</em> Done Right</h1>
-    <p class="hero-sub fade-up d2">End-to-end industrial automation services, from certified functional safety design to full plant commissioning, delivered with technical precision across every layer of the production stack.</p>
-    <div class="hero-actions fade-up d3">
-      <a href="#services" class="btn btn-gold btn-lg">View Our Services</a>
-      <a href="#contact"  class="btn btn-outline btn-lg">Contact Us</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-    Scroll
-  </div>
-</section>
-
-<!-- ============================================================
-     ABOUT
-     ============================================================ -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-slideshow fade-up" id="aboutSlideshow">
-        <div class="slideshow-track">
-
-          <div class="slide active">
-            <img src="Gemini_Generated_Image_6us2es6us2es6us2.png" alt="Food and Beverage Processing" loading="eager">
-            <div class="slide-label"><i class="fa-solid fa-utensils"></i> Food &amp; Beverage Processing</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_mxbxh1mxbxh1mxbx.png" alt="Automotive Manufacturing" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-car"></i> Automotive Manufacturing</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_mmwi6vmmwi6vmmwi.png" alt="Mining and Mineral Processing" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-helmet-safety"></i> Mining &amp; Mineral Processing</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_c505kfc505kfc505.png" alt="Energy and Utilities" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-bolt"></i> Energy &amp; Utilities</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_f6kojxf6kojxf6ko.png" alt="Water and Wastewater Treatment" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-droplet"></i> Water &amp; Wastewater Treatment</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_aotk8baotk8baotk.png" alt="Chemical Processing" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-flask"></i> Chemical Processing</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_wcw4gowcw4gowcw4.png" alt="Oil and Gas" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-oil-well"></i> Oil &amp; Gas</div>
-          </div>
-
-          <div class="slide">
-            <img src="Gemini_Generated_Image_80igfy80igfy80ig.png" alt="Agriculture and Agritech" loading="lazy">
-            <div class="slide-label"><i class="fa-solid fa-seedling"></i> Agriculture &amp; Agritech</div>
-          </div>
-
-        </div>
-
-        <div class="slideshow-controls">
-          <button class="ss-btn ss-prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
-          <div class="ss-dots">
-            <button class="ss-dot active" data-index="0" aria-label="Slide 1"></button>
-            <button class="ss-dot" data-index="1" aria-label="Slide 2"></button>
-            <button class="ss-dot" data-index="2" aria-label="Slide 3"></button>
-            <button class="ss-dot" data-index="3" aria-label="Slide 4"></button>
-            <button class="ss-dot" data-index="4" aria-label="Slide 5"></button>
-            <button class="ss-dot" data-index="5" aria-label="Slide 6"></button>
-            <button class="ss-dot" data-index="6" aria-label="Slide 7"></button>
-            <button class="ss-dot" data-index="7" aria-label="Slide 8"></button>
-          </div>
-          <button class="ss-btn ss-next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+<section id="home" class="h-hero">
+  <canvas id="heroCanvas" class="h-hero-canvas" aria-hidden="true"></canvas>
+  <div class="h-hero-body">
+    <div class="h-wrap">
+      <div class="h-hero-copy">
+        <div class="h-hero-tag h-in">EC&amp;I · PLC / DCS · SCADA · MES · FUNCTIONAL SAFETY</div>
+        <h1 class="h-in">From User Requirements Specification to <span class="h-grad">Handover.</span></h1>
+        <p class="h-in">One accountable engineering partner for the full automation stack: field instrumentation, control, SCADA, historian and ERP integration, delivered to IEC and ISO standards across Africa and beyond.</p>
+        <div class="h-hero-ctas h-in">
+          <a href="#contact" class="h-btn h-btn-gold">Request a consultation
+            <svg class="h-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#services" class="h-btn h-btn-ghost">Explore services</a>
         </div>
       </div>
-      <div class="fade-up d1">
-        <div class="section-eyebrow">About Mechatrolix</div>
-        <h2 class="section-title">From Concept<br>Through Commissioning</h2>
-        <p style="color:var(--text-mid); line-height:1.85; margin-bottom:1rem;">Mechatrolix is a specialist industrial automation consultancy offering integrated EC&amp;I, PLC programming, SCADA development, Robot programming and functional safety services to manufacturers, process plants and OEMs across Africa and beyond.</p>
-        <p style="color:var(--text-mid); line-height:1.85; margin-bottom:1.5rem;">We bridge the gap between engineering design and operational reality, delivering compliant, robust and maintainable automation solutions that meet international safety standards from concept through commissioning.</p>
-        <div class="about-tags">
-          <span class="about-tag">ISO 13849</span>
-          <span class="about-tag">IEC 62061</span>
-          <span class="about-tag">IEC 61511</span>
-          <span class="about-tag">Siemens TIA Portal</span>
-          <span class="about-tag">Allen-Bradley</span>
-          <span class="about-tag">FANUC Robotics</span>
-          <span class="about-tag">SCADA / HMI</span>
-          <span class="about-tag">EPLAN Electric</span>
-        </div>
-      </div>
+    </div>
+  </div>
+  <a href="#services" class="h-scroll-cue" aria-label="Scroll to services"><span>SCROLL</span><i></i></a>
+  <div class="h-pictured"><span>PICTURED · TANZANIA</span>Greenfield uranium processing plant: full-lifecycle PLC, SCADA and networked automation.</div>
+  <div class="h-trust">
+    <div class="h-wrap">
+      <div class="h-trust-item"><small>B-BBEE</small><strong>Level 1 · 135% recognition</strong></div>
+      <div class="h-trust-item"><small>Functional safety</small><strong>CMSE® · IEC 61508 / 61511</strong></div>
+      <div class="h-trust-item"><small>Delivered in</small><strong>South Africa · Tanzania · USA · UAE</strong></div>
+      <div class="h-trust-item"><small>Response</small><strong>Assessment within 1 business day</strong></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     LEADERSHIP
+     METRICS BAND
      ============================================================ -->
-<section id="leadership" class="section section-alt">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-eyebrow">Leadership</div>
-      <h2 class="section-title">Meet the Director</h2>
+<section class="h-metrics" aria-label="Key figures">
+  <div class="h-wrap">
+    <div class="h-metric fade-up">
+      <strong class="h-count" data-target="4" data-suffix="">0</strong>
+      <small>Countries delivered in</small>
     </div>
-    <div class="leadership-card fade-up d1">
-      <div class="leader-avatar"><img src="images/cv-photo.jpg" alt="Lithalethu Yotsi" class="leader-photo"></div>
-      <div>
-        <div class="leader-name">Lithalethu Yotsi</div>
-        <div class="leader-title">Managing Director</div>
-        <div class="leader-creds">
-          <div class="leader-cred"><i class="fa-solid fa-graduation-cap"></i> BEng Mechatronics</div>
-          <div class="leader-cred"><i class="fa-solid fa-shield-halved"></i> CMSE - Certified Machinery Safety Expert</div>
-          <div class="leader-cred"><i class="fa-solid fa-shield-halved"></i> FSEr - IEC 61508/61511 Functional Safety Engineer</div>
-          <div class="leader-cred"><i class="fa-solid fa-globe"></i> Africa &amp; International Project Experience</div>
-        </div>
-      </div>
+    <div class="h-metric fade-up">
+      <strong class="h-count" data-target="9" data-suffix="">0</strong>
+      <small>Engineering disciplines</small>
+    </div>
+    <div class="h-metric fade-up">
+      <strong>L1<em>·135%</em></strong>
+      <small>B-BBEE recognition</small>
+    </div>
+    <div class="h-metric fade-up">
+      <strong class="h-count" data-target="5" data-prefix="ISA-" data-suffix="">0</strong>
+      <small>Stack levels integrated</small>
+    </div>
+    <div class="h-metric fade-up">
+      <strong>&lt;1<em>day</em></strong>
+      <small>Assessment response</small>
     </div>
   </div>
 </section>
@@ -189,307 +114,386 @@
 <!-- ============================================================
      SERVICES
      ============================================================ -->
-<section id="services" class="section section-darker">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-eyebrow">Our Services</div>
-      <h2 class="section-title light">Nine Disciplines.<br>One Accountable Partner.</h2>
-      <p class="section-sub light">Full-stack automation engineering from safety concept through commissioning sign-off.</p>
-    </div>
-    <div class="services-grid">
-
-      <div class="service-card fade-up">
-        <div class="service-num">01</div>
-        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Machine/Plant Risk Assessment &amp; Functional Safety</h3>
-        <p>ISO 13849, IEC 62061, IEC 61508, IEC 61511. SISTEMA calculations, safety concept documentation, SIL/PLr verification and safety circuit design.</p>
+<section id="services" class="h-section">
+  <div class="h-wrap">
+    <div class="h-head fade-up">
+      <div>
+        <div class="h-eyebrow">What we engineer</div>
+        <h2 class="h-title">Nine disciplines. One accountable partner.</h2>
       </div>
-
-      <div class="service-card fade-up d1">
-        <div class="service-num">02</div>
-        <div class="service-icon"><i class="fa-solid fa-microchip"></i></div>
+      <p>Safety, electrical, control, SCADA, robotics and commissioning under one roof, with no finger-pointing between subcontractors when the plant has to start.</p>
+    </div>
+    <div class="h-grid-3">
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><span>SVC-01</span></div>
+        <h3>Risk Assessment &amp; Functional Safety</h3>
+        <p>Machine and plant risk assessment, safety concepts, SIL / PLr verification and safety circuit design with quantified SIL / PLr calculations.</p>
+        <div class="h-svc-tech">ISO 13849 · IEC 62061 · IEC 61508 · IEC 61511</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9 4v16M4 9h5M4 14h5M13 8h4M13 12h4M13 16h4"/></svg></div><span>SVC-02</span></div>
         <h3>PLC / DCS Programming</h3>
-        <p>Siemens TIA Portal (S7-300/400/1200/1500) / PCS7, Allen-Bradley Studio 5000 (ControlLogix/CompactLogix), Beckhoff TwinCAT 3, OMRON Sysmac. IEC 61131-3 compliant.</p>
-      </div>
-
-      <div class="service-card fade-up d2">
-        <div class="service-num">03</div>
-        <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
-        <h3>SCADA / HMI Development &amp; SQL Integration</h3>
-        <p>WinCC v7.x/v8.x, WinCC Unified/Professional, FactoryTalk View SE, Ignition, Adroit SCADA. Historian configuration and SQL Server integration.</p>
-      </div>
-
-      <div class="service-card fade-up">
-        <div class="service-num">04</div>
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" width="1.15em" height="1.15em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="4" y="2.5" width="16" height="19" rx="1"/>
-            <line x1="9.33" y1="2.5" x2="9.33" y2="21.5"/>
-            <line x1="14.67" y1="2.5" x2="14.67" y2="21.5"/>
-            <line x1="7.4" y1="10" x2="7.4" y2="14"/>
-            <line x1="12.7" y1="10" x2="12.7" y2="14"/>
-            <line x1="18" y1="10" x2="18" y2="14"/>
-          </svg>
-        </div>
-        <h3>LV EC&amp;I Design, Electrical Schematics &amp; Panel Building</h3>
-        <p>Low voltage EC&amp;I solution specification (MCC design, panel specifications, field instrument datasheets, cable schedules) and electrical design in EPLAN Electric P8 / AutoCAD Electrical: single/multi-line diagrams, loop diagrams, panel layouts, terminal schedules, instrument index and BOM. Panel building and electrical testing including panel assembly, continuity and insulation resistance testing, functional and loop checks, and Factory Acceptance Testing (FAT) with documented test reports to IEC 61439, in compliance with applicable LV standards and project codes of practice.</p>
-      </div>
-
-      <div class="service-card fade-up d1">
-        <div class="service-num">05</div>
-        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>IoT Integration &amp; OT Cybersecurity</h3>
-        <p>Industrial IoT integration connecting field devices, PLCs and edge gateways to on-premise and cloud platforms via MQTT and OPC UA for remote monitoring, condition-based maintenance and data-driven operations. OT cybersecurity aligned to IEC 62443: network segmentation and zoning, secure remote access, firewall and DMZ architecture, asset inventory, hardening and defence-in-depth for industrial control systems.</p>
-      </div>
-
-      <div class="service-card fade-up d2">
-        <div class="service-num">06</div>
-        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>Business Intelligence &amp; Reporting Applications</h3>
-        <p>Custom BI and analytics applications that turn operational data into actionable insight: production tracking, downtime and OEE dashboards, fleet and telematics reporting, MES/ERP integration, and automated exception alerting. Built on .NET framework and SQL Server, with Power BI/reporting layers where required, connecting field and operational data (PLC, SCADA, GPS/telematics, weighbridge, warehouse) into unified dashboards for management and operations teams across manufacturing, mining, logistics, and process industries.</p>
-      </div>
-
-      <div class="service-card fade-up">
-        <div class="service-num">07</div>
-        <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
-        <h3>FANUC Robot Programming</h3>
-        <p>KAREL and Teach Pendant (TP) programming for welding, material handling, palletising and assembly applications on FANUC controllers.</p>
-      </div>
-
-      <div class="service-card fade-up d1">
-        <div class="service-num">08</div>
-        <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+        <p>Structured, IEC 61131-3 compliant control software for discrete and process plants: greenfield builds, migrations and brownfield upgrades.</p>
+        <div class="h-svc-tech">All major PLC &amp; DCS platforms · IEC 61131-3</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4M6 12l3-3 3 2 5-4"/></svg></div><span>SVC-03</span></div>
+        <h3>SCADA / HMI &amp; SQL Integration</h3>
+        <p>Operator interfaces, alarm management, historian configuration and SQL database integration that operations teams actually use.</p>
+        <div class="h-svc-tech">All major SCADA / HMI platforms · Historian · SQL</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h6l-1 9 8-11h-6z"/></svg></div><span>SVC-04</span></div>
+        <h3>LV EC&amp;I Design &amp; Panel Building</h3>
+        <p>MCC and panel specifications, schematics, loop diagrams and cable schedules, then panel build, IR and continuity testing and documented FAT.</p>
+        <div class="h-svc-tech">IEC 61439 · Schematics · Panel build · FAT</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 018 0v3M12 14v2"/></svg></div><span>SVC-05</span></div>
+        <h3>IIoT &amp; OT Cybersecurity</h3>
+        <p>Edge-to-cloud connectivity for remote monitoring, plus zoning, secure remote access, DMZ design and hardening of control networks.</p>
+        <div class="h-svc-tech">MQTT · OPC UA · IEC 62443 · Defence-in-depth</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><span>SVC-06</span></div>
+        <h3>MES, BI &amp; Reporting Applications</h3>
+        <p>Production tracking, OEE and downtime dashboards, and MES / ERP integration that turn PLC, SCADA and weighbridge data into decisions.</p>
+        <div class="h-svc-tech">Custom apps · Dashboards · ERP integration · REST</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h8M8 21v-5M8 16l5-6M13 10l5 2M18 12l2-4"/><circle cx="13" cy="10" r="1.5"/><circle cx="8" cy="16" r="1.5"/></svg></div><span>SVC-07</span></div>
+        <h3>Robot Programming &amp; Cells</h3>
+        <p>Welding, material handling, palletising and assembly cells programmed and commissioned across all major robot platforms.</p>
+        <div class="h-svc-tech">Welding · Handling · Palletising · Assembly</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v5.5M18.9 16l-4.7-2.7M5.1 16l4.7-2.7"/></svg></div><span>SVC-08</span></div>
         <h3>Drives &amp; Motion Control</h3>
-        <p>Siemens SINAMICS, SEW Eurodrive, ABB ACS, Schneider Altivar, Danfoss VLT and Nidec Control Techniques drive selection, sizing and parameter configuration. Servo and motion control system design using Siemens S120 including multi-axis coordination, cam profiling and electronic gearing. Full site commissioning covering harmonic analysis, motor protection coordination and energy optimization for variable speed and precision motion applications across industrial processes.</p>
-      </div>
-
-      <div class="service-card fade-up d2">
-        <div class="service-num">09</div>
-        <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
-        <h3>Machine &amp; Plant Commissioning / Project Management</h3>
-        <p>FAT and SAT planning, site installation oversight, loop checking, handover documentation and subcontractor coordination through to sign-off.</p>
-      </div>
-
+        <p>Drive selection, sizing and parameterisation, multi-axis servo coordination, cam profiling and electronic gearing.</p>
+        <div class="h-svc-tech">All major drive, servo &amp; motion platforms</div>
+      </article>
+      <article class="h-svc fade-up">
+        <div class="h-svc-top"><div class="h-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V3h6v1M9 11l2 2 4-4M9 17h6"/></svg></div><span>SVC-09</span></div>
+        <h3>Commissioning &amp; Project Management</h3>
+        <p>FAT and SAT planning, installation oversight, loop checks, subcontractor coordination and handover documentation through to sign-off.</p>
+        <div class="h-svc-tech">FAT · SAT · Loop checks · Handover packs</div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     WHY MECHATROLIX
+     FIELD TO ENTERPRISE
      ============================================================ -->
-<section id="why" class="section section-alt">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-eyebrow">Why Mechatrolix</div>
-      <h2 class="section-title">Built Different.<br>Engineered to Deliver.</h2>
+<section class="h-section h-dark h-stack">
+  <div class="h-wrap">
+    <div class="h-stack-intro fade-up">
+      <div class="h-eyebrow">Field to enterprise</div>
+      <h2 class="h-title">Every layer of the stack, integrated.</h2>
+      <p>Most integrators stop at the PLC or the SCADA. We carry the data from the field device all the way to your ERP, so a production order, a recipe or a weight reading never gets retyped by hand.</p>
+      <a href="projects.html" class="h-link">See the SCADA ↔ ERP integration
+        <svg class="h-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="why-grid">
-      <div class="why-card fade-up">
-        <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
-        <h3>Single-Partner Accountability</h3>
-        <p>Safety, electrical, PLC, SCADA, robotics and commissioning under one roof. No finger-pointing between subcontractors.</p>
-      </div>
-      <div class="why-card fade-up d1">
-        <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Standards-Compliant by Design</h3>
-        <p>ISO 13849, IEC 62061 and IEC 61511 are built into the engineering process from the outset, not retrofitted as an afterthought.</p>
-      </div>
-      <div class="why-card fade-up d2">
-        <div class="why-icon"><i class="fa-solid fa-sliders"></i></div>
-        <h3>Platform-Agnostic Capability</h3>
-        <p>Siemens, Allen-Bradley, Beckhoff, OMRON: we select the best tool for your project, not the one we get commission on.</p>
-      </div>
-      <div class="why-card fade-up d3">
-        <div class="why-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Field to Enterprise Integration</h3>
-        <p>Field instrumentation through PLC, SCADA, SQL historian and .NET shop floor applications: the complete OT/IT stack.</p>
-      </div>
-      <div class="why-card fade-up d4">
-        <div class="why-icon"><i class="fa-solid fa-circle-check"></i></div>
-        <h3>Project Delivery Focus</h3>
-        <p>End-to-end from specification through commissioning sign-off. FAT, SAT and loop-check documentation delivered on time, on scope.</p>
-      </div>
+    <div class="h-levels fade-up">
+      <div class="h-level"><small>LEVEL 4</small><strong>ERP / Business</strong><span>Production orders, recipes and material confirmations exchanged with ERP systems via REST and open APIs.</span></div>
+      <div class="h-level"><small>LEVEL 3</small><strong>MES / Historian</strong><span>Batch genealogy, OEE, downtime and process historians behind custom applications.</span></div>
+      <div class="h-level"><small>LEVEL 2</small><strong>SCADA / HMI</strong><span>Supervisory control, alarm management and operator graphics on any major SCADA platform.</span></div>
+      <div class="h-level"><small>LEVEL 1</small><strong>Control</strong><span>PLC, DCS, safety controllers, drives and robots on Profinet, EtherNet/IP and EtherCAT.</span></div>
+      <div class="h-level"><small>LEVEL 0</small><strong>Field / Electrical</strong><span>Instruments, AS-i networks, MCCs and LV panels: specified, drawn, built and loop-checked.</span></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     B-BBEE CREDENTIALS
+     DIGITAL / INDUSTRY 4.0 CAPABILITIES
      ============================================================ -->
-<section id="bbbee" class="section section-dark">
-  <div class="container">
-    <div class="bbbee-grid">
+<section id="digital" class="h-section h-digital">
+  <div class="h-wrap">
+    <div class="h-head fade-up">
+      <div>
+        <div class="h-eyebrow">Data-driven operations</div>
+        <h2 class="h-title">From plant-floor data to boardroom decisions.</h2>
+      </div>
+      <p>The same team that writes your PLC code builds the dashboards above it, so the numbers your managers see are the numbers your controllers actually measured.</p>
+    </div>
+    <div class="h-caps">
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8 2-4h4"/></svg></div>
+        <h3>Real-time monitoring</h3>
+        <p>Live plant KPIs streamed from the floor to any browser or phone, no VPN into the PLC required.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+        <h3>Historian &amp; data logging</h3>
+        <p>Every tag, batch and event archived to a central historian with full traceability and genealogy.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h6l-1 9 8-11h-6z"/></svg></div>
+        <h3>Energy monitoring</h3>
+        <p>Per-line and per-machine power measurement that turns kWh into cost-per-unit you can act on.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 109 9h-9z"/><path d="M12 3v9l6-3"/></svg></div>
+        <h3>OEE &amp; downtime analytics</h3>
+        <p>Availability, performance and quality tracked automatically, with reason-coded downtime.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Predictive maintenance</h3>
+        <p>Vibration, temperature and runtime thresholds that flag a failing motor before it trips the line.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-5"/></svg></div>
+        <h3>Custom dashboards</h3>
+        <p>Role-based BI and web dashboards: one view for operators, another for the exec team.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/><rect x="7" y="9" width="10" height="7" rx="1"/></svg></div>
+        <h3>Remote access &amp; support</h3>
+        <p>Secure, zoned remote connectivity so we diagnose and patch without flying an engineer to site.</p>
+      </article>
+      <article class="h-cap fade-up">
+        <div class="h-cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 5-7"/></svg></div>
+        <h3>Historical analysis</h3>
+        <p>Trend, compare and export historian data to prove a change worked, or find out why it didn't.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <div class="bbbee-badge-wrap fade-up">
-        <div class="bbbee-badge">
-          <div class="bbbee-badge-inner">
-            <div class="bbbee-badge-abbr">B-BBEE</div>
-            <div class="bbbee-badge-level-text">Level</div>
-            <div class="bbbee-badge-number">1</div>
-            <div class="bbbee-badge-contributor">Contributor</div>
-            <div class="bbbee-badge-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-          </div>
+<!-- ============================================================
+     TECHNOLOGIES / LOGO WALL
+     ============================================================ -->
+<section class="h-tech" aria-label="Technologies and platforms we work with">
+  <div class="h-wrap h-tech-head fade-up">
+    <small>TECHNOLOGIES &amp; PLATFORMS WE WORK WITH</small>
+  </div>
+  <div class="h-logos">
+    <div class="h-logos-track">
+      <img src="images/logos/siemens.svg" alt="Siemens" loading="lazy">
+      <img src="images/logos/rockwell.svg" alt="Rockwell Automation" loading="lazy">
+      <img src="images/logos/schneider.svg" alt="Schneider Electric" loading="lazy">
+      <img src="images/logos/abb.svg" alt="ABB" loading="lazy">
+      <img src="images/logos/omron.svg" alt="OMRON" loading="lazy">
+      <img src="images/logos/fanuc.svg" alt="FANUC" loading="lazy">
+      <img src="images/logos/beckhoff.svg" alt="Beckhoff" loading="lazy">
+      <img src="images/logos/sew-eurodrive.svg" alt="SEW-EURODRIVE" loading="lazy">
+      <img src="images/logos/eplan.svg" alt="EPLAN" loading="lazy">
+      <img src="images/logos/ignition.svg" alt="Ignition by Inductive Automation" loading="lazy">
+      <img src="images/logos/aveva.svg" alt="AVEVA" loading="lazy">
+      <img src="images/logos/teltonika.png" alt="Teltonika" loading="lazy">
+      <img src="images/logos/aws.svg" alt="Amazon Web Services" loading="lazy">
+      <img src="images/logos/azure.svg" alt="Microsoft Azure" loading="lazy">
+      <img src="images/logos/raspberry-pi.svg" alt="Raspberry Pi" loading="lazy">
+      <img src="images/logos/node-red.svg" alt="Node-RED" loading="lazy">
+      <img src="images/logos/grafana.svg" alt="Grafana" loading="lazy">
+      <img src="images/logos/octoplant.svg" alt="octoplant" loading="lazy">
+      <img src="images/logos/siemens.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/rockwell.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/schneider.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/abb.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/omron.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/fanuc.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/beckhoff.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/sew-eurodrive.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/eplan.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/ignition.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/aveva.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/teltonika.png" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/aws.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/azure.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/raspberry-pi.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/node-red.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/grafana.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="images/logos/octoplant.svg" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section id="projects" class="h-section">
+  <div class="h-wrap">
+    <div class="h-head fade-up">
+      <div>
+        <div class="h-eyebrow">Proven on plant</div>
+        <h2 class="h-title">Proven on live plants.</h2>
+      </div>
+      <a href="projects.html" class="h-btn h-btn-line">All projects</a>
+    </div>
+    <div class="h-grid-3">
+      <article class="h-proj fade-up">
+        <img src="images/mkuju-main.jpg" alt="Leach tanks at a uranium processing plant in Tanzania" loading="lazy">
+        <div class="h-proj-body">
+          <div class="h-tags"><span>MINING</span><span>FULL LIFECYCLE</span><span>TANZANIA</span></div>
+          <h3>Uranium Plant Automation</h3>
+          <p>Tanzania's first uranium processing plant: PLC control of every VSD and starter, full SCADA with historian, and an OT-to-IT bridge into the business systems.</p>
+          <a href="projects.html" class="h-link">Read case study <svg class="h-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <p class="bbbee-cert-note">Verified Contributor Certificate</p>
-      </div>
+      </article>
+      <article class="h-proj fade-up">
+        <img src="images/lime-plant-web.jpg" alt="Lime plant tanks at a power station in Mpumalanga" loading="lazy">
+        <div class="h-proj-body">
+          <div class="h-tags"><span>POWER</span><span>BROWNFIELD</span><span>MPUMALANGA</span></div>
+          <h3>Power Station Lime Plant Refurbishment</h3>
+          <p>PLC and HMI engineering for the North and South lime plants feeding the FGD process, from plant analysis through cold and hot commissioning.</p>
+          <a href="projects.html" class="h-link">Read case study <svg class="h-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="h-proj fade-up">
+        <img src="images/wwtp-web.jpg" alt="Wastewater treatment channel" loading="lazy">
+        <div class="h-proj-body">
+          <div class="h-tags"><span>WATER</span><span>FULL EC&amp;I</span><span>MPUMALANGA</span></div>
+          <h3>Wastewater Treatment Plant EC&amp;I</h3>
+          <p>Full electrical, control and instrumentation scope for a wastewater treatment works, including control network cybersecurity.</p>
+          <a href="projects.html" class="h-link">Read case study <svg class="h-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <div class="h-grid-2">
+      <a href="projects.html" class="h-proj-row fade-up"><div><small>MANUFACTURING · OT/IT · UNITED STATES</small><strong>SCADA ↔ ERP bidirectional integration</strong></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="projects.html" class="h-proj-row fade-up"><div><small>MARINE · REMOTE ENGAGEMENT · DUBAI</small><strong>Ship fin stabiliser optimisation</strong></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
 
-      <div class="fade-up d1">
-        <div class="section-eyebrow">Transformation &amp; Compliance</div>
-        <h2 class="section-title light">B-BBEE Level 1<br>Contributor Status</h2>
-        <p style="color:var(--text-light); line-height:1.85; margin-bottom:0;">Mechatrolix holds Level&nbsp;1 status, the highest B-BBEE rating under South Africa's Broad-Based Black Economic Empowerment codes of good practice. Engaging Mechatrolix directly strengthens your enterprise's supplier development and procurement scorecard.</p>
-        <div class="bbbee-benefits">
-          <div class="bbbee-benefit">
-            <div class="bbbee-benefit-icon"><i class="fa-solid fa-star"></i></div>
-            <div>
-              <strong>135% Procurement Recognition</strong>
-              <span>Spend with Mechatrolix counts at 135% towards your B-BBEE supplier development and procurement score, the maximum multiplier available.</span>
-            </div>
-          </div>
-          <div class="bbbee-benefit">
-            <div class="bbbee-benefit-icon"><i class="fa-solid fa-users"></i></div>
-            <div>
-              <strong>Black-Owned &amp; Managed</strong>
-              <span>100% black-owned and black-managed, fully qualifying as an EME under the B-BBEE framework with automatic Level&nbsp;1 recognition.</span>
-            </div>
-          </div>
-          <div class="bbbee-benefit">
-            <div class="bbbee-benefit-icon"><i class="fa-solid fa-file-contract"></i></div>
-            <div>
-              <strong>Verified &amp; Certifiable</strong>
-              <span>B-BBEE certificate available on request for tender submissions, procurement compliance reporting and corporate supply chain requirements.</span>
-            </div>
-          </div>
+<!-- ============================================================
+     SUPPORT & SLA
+     ============================================================ -->
+<section id="support" class="h-section h-support">
+  <div class="h-wrap">
+    <div class="h-head fade-up">
+      <div>
+        <div class="h-eyebrow">After handover</div>
+        <h2 class="h-title">We don't disappear at handover.</h2>
+      </div>
+      <p>Commissioning sign-off is the start of the relationship, not the end. Choose the level of cover your operation needs, from ad-hoc callouts to a fully retained response guarantee.</p>
+    </div>
+    <div class="h-tiers">
+      <article class="h-tier fade-up">
+        <div class="h-tier-head"><span>TIER 01</span><h3>On-Demand Callout</h3></div>
+        <p>Breakdown support and remote fault-finding as and when you need it, billed per engagement.</p>
+        <ul>
+          <li>Remote diagnostics &amp; program support</li>
+          <li>On-site callout by arrangement</li>
+          <li>Best-effort response</li>
+        </ul>
+      </article>
+      <article class="h-tier h-tier-feature fade-up">
+        <div class="h-tier-flag">MOST CHOSEN</div>
+        <div class="h-tier-head"><span>TIER 02</span><h3>Scheduled Care</h3></div>
+        <p>Planned maintenance visits plus priority remote support to keep control systems healthy year-round.</p>
+        <ul>
+          <li>Scheduled preventive maintenance</li>
+          <li>Backup &amp; recovery of PLC / SCADA code</li>
+          <li>Priority remote response</li>
+          <li>Annual system health report</li>
+        </ul>
+      </article>
+      <article class="h-tier fade-up">
+        <div class="h-tier-head"><span>TIER 03</span><h3>Retained SLA</h3></div>
+        <p>A contracted response-time guarantee with reserved engineering capacity for critical plants.</p>
+        <ul>
+          <li>Guaranteed response times</li>
+          <li>24 / 7 remote escalation path</li>
+          <li>Reserved engineering capacity</li>
+          <li>Spares &amp; obsolescence planning</li>
+        </ul>
+      </article>
+    </div>
+    <div class="h-support-cta fade-up">
+      <span>Not sure which fits? We'll recommend a level after reviewing your plant.</span>
+      <a href="#contact" class="h-btn h-btn-gold">Discuss a support plan
+        <svg class="h-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY + B-BBEE
+     ============================================================ -->
+<section id="bbbee" class="h-section h-plum h-why">
+  <div class="h-wrap">
+    <div class="fade-up">
+      <div class="h-eyebrow">Why Mechatrolix</div>
+      <h2 class="h-title">Built different. Engineered to deliver.</h2>
+      <div class="h-why-list">
+        <div class="h-why-item"><small>01</small><strong>Single-partner accountability</strong><span>Safety, electrical, PLC, SCADA, robotics and commissioning under one contract.</span></div>
+        <div class="h-why-item"><small>02</small><strong>Standards-compliant by design</strong><span>ISO 13849, IEC 62061 and IEC 61511 built in from day one, never retrofitted.</span></div>
+        <div class="h-why-item"><small>03</small><strong>Platform-agnostic</strong><span>We choose the right platform for your plant on merit, not on our margin or a single vendor tie-in.</span></div>
+        <div class="h-why-item"><small>04</small><strong>Documented delivery</strong><span>FAT, SAT and loop-check packs delivered on time and on scope, ready for handover.</span></div>
+      </div>
+    </div>
+    <div class="h-bee fade-up">
+      <div class="h-bee-top"><b>L1</b><div><small>B-BBEE STATUS</small><strong>Level 1 Contributor</strong></div></div>
+      <p>100% black-owned and managed. Spend with Mechatrolix counts at 135% towards your supplier development and procurement scorecard.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>135% procurement recognition</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>EME with automatic Level 1 recognition</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Certificate available for tender submissions</li>
+      </ul>
+      <a href="#contact" class="h-btn">Request our B-BBEE certificate</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LEADERSHIP + INDUSTRIES
+     ============================================================ -->
+<section id="about" class="h-section h-about">
+  <div class="h-wrap">
+    <div class="h-about-col fade-up">
+      <div class="h-eyebrow">Leadership</div>
+      <div class="h-director">
+        <img src="images/cv-photo.jpg" alt="Lithalethu Yotsi, Managing Director">
+        <div>
+          <strong>Lithalethu Yotsi</strong>
+          <em>Managing Director</em>
+          <ul>
+            <li>BEng Mechatronics</li>
+            <li>CMSE® Certified Machinery Safety Expert</li>
+            <li>FSEng: IEC 61508 / 61511</li>
+            <li>Africa &amp; international project experience</li>
+          </ul>
         </div>
       </div>
-
+      <p>We bridge the gap between engineering design and operational reality, delivering compliant, robust and maintainable automation for manufacturers, process plants and OEMs.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     STANDARDS & PLATFORMS
-     ============================================================ -->
-<section id="standards" class="section section-darker">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-eyebrow">Standards &amp; Platforms</div>
-      <h2 class="section-title light">Deep Platform Knowledge.<br>Broad Standards Coverage.</h2>
-    </div>
-    <div class="standards-grid fade-up d1">
-      <div class="standard-row">
-        <div class="standard-label">Safety Standards</div>
-        <div class="standard-values">ISO 13849-1/2 &bull; IEC 62061 &bull; IEC 61508 &bull; IEC 61511 &bull; IEC 60364 &bull; EN ISO 12100</div>
-      </div>
-      <div class="standard-row">
-        <div class="standard-label">PLC / DCS</div>
-        <div class="standard-values">Siemens S7/TIA Portal &bull; Siemens PCS7/PCS Neo &bull; Allen-Bradley Studio 5000 &bull; Beckhoff TwinCAT 3 &bull; OMRON Sysmac NJ/NX &bull; IEC 61131-3</div>
-      </div>
-      <div class="standard-row">
-        <div class="standard-label">SCADA / HMI</div>
-        <div class="standard-values">WinCC V7/V8/OA &bull; WinCC Comfort/Advanced/Professional/Unified &bull; FactoryTalk View SE &bull; Ignition &bull; Adroit SCADA</div>
-      </div>
-      <div class="standard-row">
-        <div class="standard-label">Schematic / 3D Design</div>
-        <div class="standard-values">EPLAN Electric P8 &bull; EPLAN Pro Panel &bull; AutoCAD Electrical</div>
-      </div>
-      <div class="standard-row">
-        <div class="standard-label">Networks &amp; Protocols</div>
-        <div class="standard-values">Profinet &bull; EtherNet/IP &bull; OPC-UA &bull; Modbus TCP &bull; ASi / DeviceNet &bull; Profibus &bull; EtherCAT</div>
-      </div>
-      <div class="standard-row">
-        <div class="standard-label">Development</div>
-        <div class="standard-values">.NET Framework / C# &bull; SQL Server &bull; FANUC TP / KAREL &bull; SINAMICS / ACS / Altivar &bull; Python</div>
+    <div id="industries-preview" class="h-about-col fade-up">
+      <div class="h-eyebrow">Sectors we serve</div>
+      <h2 class="h-title">Automation across every industrial sector.</h2>
+      <div class="h-ind">
+        <a href="industries.html">Mining &amp; Mineral Processing</a>
+        <a href="industries.html">Power &amp; Utilities</a>
+        <a href="industries.html">Water &amp; Wastewater</a>
+        <a href="industries.html">Food &amp; Beverage</a>
+        <a href="industries.html">Automotive Manufacturing</a>
+        <a href="industries.html">Chemical &amp; Pharma</a>
+        <a href="industries.html">Oil &amp; Gas</a>
+        <a href="industries.html">Agriculture &amp; Agritech</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     INDUSTRIES PREVIEW
+     CONTACT
      ============================================================ -->
-<section id="industries-preview" class="section section-dark">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-eyebrow">Industries &amp; Expertise</div>
-      <h2 class="section-title light">Automation Across<br>Every Industrial Sector</h2>
-      <p class="section-sub light">From primary manufacturing to niche process industries, we bring proven automation capability wherever you operate.</p>
-    </div>
-    <div class="ind-preview-grid fade-up d1">
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-industry"></i></div><h4>Manufacturing</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-car"></i></div><h4>Automotive</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-helmet-safety"></i></div><h4>Mining</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-utensils"></i></div><h4>Food &amp; Beverage</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-droplet"></i></div><h4>Water &amp; Wastewater</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-bolt"></i></div><h4>Energy &amp; Utilities</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-oil-well"></i></div><h4>Oil &amp; Gas</h4></div>
-      <div class="ind-preview-card"><div class="ind-preview-icon"><i class="fa-solid fa-flask"></i></div><h4>Chemical &amp; Pharma</h4></div>
-    </div>
-    <div style="text-align:center; margin-top:2.5rem;" class="fade-up d2">
-      <a href="industries.html" class="btn btn-gold">View All Industries <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CONTACT STRIP
-     ============================================================ -->
-<div class="contact-strip">
-  <div class="container contact-strip-inner">
-    <div class="strip-item">
-      <i class="fa-solid fa-phone"></i>
-      <strong>+27 76 427 5011</strong>
-    </div>
-    <div class="strip-item">
-      <i class="fa-solid fa-envelope"></i>
-      <strong>info@mechatrolix.co.za</strong>
-    </div>
-    <a href="https://wa.me/27764275011" class="btn-wa" target="_blank" rel="noopener">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-    </a>
-  </div>
-</div>
-
-<!-- ============================================================
-     CONTACT FORM
-     ============================================================ -->
-<section id="contact" class="section section-darker">
-  <div class="container">
-    <div class="contact-form-grid">
-      <div class="cf-left fade-up">
-        <div class="section-eyebrow">Get In Touch</div>
-        <h2>Let's Discuss<br>Your Project</h2>
-        <p>Tell us about your automation challenge. We'll respond within one business day with an honest assessment and next steps.</p>
-        <div class="cf-info-list">
-          <div class="cf-info-item">
-            <div class="cf-icon"><i class="fa-solid fa-phone"></i></div>
-            <a href="tel:+27764275011">+27 76 427 5011</a>
-          </div>
-          <div class="cf-info-item">
-            <div class="cf-icon"><i class="fa-solid fa-envelope"></i></div>
-            <a href="mailto:info@mechatrolix.co.za">info@mechatrolix.co.za</a>
-          </div>
-          <div class="cf-info-item">
-            <div class="cf-icon"><i class="fa-brands fa-whatsapp"></i></div>
-            <a href="https://wa.me/27764275011" target="_blank" rel="noopener">+27 76 427 5011 (WhatsApp)</a>
-          </div>
-          <div class="cf-info-item">
-            <div class="cf-icon"><i class="fa-brands fa-linkedin"></i></div>
-            <a href="https://linkedin.com/company/mechatrolix" target="_blank" rel="noopener">linkedin.com/company/mechatrolix</a>
-          </div>
-          <div class="cf-info-item">
-            <div class="cf-icon"><i class="fa-solid fa-globe"></i></div>
-            <span>www.mechatrolix.co.za</span>
-          </div>
-        </div>
+<section id="contact" class="h-section h-dark h-contact">
+  <div class="h-wrap">
+    <div class="h-contact-info fade-up">
+      <div class="h-eyebrow">Get in touch</div>
+      <h2 class="h-title">Let's discuss your project.</h2>
+      <p>Tell us about your automation challenge. We respond within one business day with an honest assessment and next steps.</p>
+      <div class="h-channels">
+        <a href="tel:+27764275011"><small>PHONE</small><span>+27 76 427 5011</span></a>
+        <a href="https://wa.me/27764275011" target="_blank" rel="noopener"><small>WHATSAPP</small><span>+27 76 427 5011</span></a>
+        <a href="mailto:info@mechatrolix.co.za"><small>EMAIL</small><span>info@mechatrolix.co.za</span></a>
+        <a href="https://linkedin.com/company/mechatrolix" target="_blank" rel="noopener"><small>LINKEDIN</small><span>linkedin.com/company/mechatrolix</span></a>
       </div>
-
-      <form class="contact-form-box fade-up d1" id="contactForm" method="POST" novalidate>
+    </div>
+    <form class="contact-form-box fade-up d1" id="contactForm" method="POST" novalidate>
         <!-- formsubmit.co config -->
         <input type="hidden" name="_subject" value="New Enquiry - Mechatrolix Website">
         <input type="hidden" name="_captcha" value="false">
@@ -545,7 +549,7 @@
               <option>LV EC&amp;I Design, Electrical Schematics &amp; Panel Building</option>
               <option>IoT Integration &amp; OT Cybersecurity</option>
               <option>Custom Shop Floor Applications</option>
-              <option>FANUC Robot Programming</option>
+              <option>Robot Programming &amp; Cells</option>
               <option>Drives &amp; Motion Control</option>
               <option>Machine &amp; Plant Commissioning / PM</option>
               <option>Multiple / Full Project</option>
@@ -562,7 +566,6 @@
         <p class="form-note">By submitting you agree to be contacted regarding your enquiry. We do not share your information.</p>
         <p class="form-success" id="formSuccess"><i class="fa-solid fa-circle-check"></i> Thank you! We'll be in touch within one business day.</p>
       </form>
-    </div>
   </div>
 </section>
 
@@ -605,7 +608,7 @@
           <li><a href="index.html#services">PLC / DCS Programming</a></li>
           <li><a href="index.html#services">SCADA / HMI</a></li>
           <li><a href="index.html#services">EC&amp;I Specification</a></li>
-          <li><a href="index.html#services">FANUC Robotics</a></li>
+          <li><a href="index.html#services">Robotics</a></li>
           <li><a href="index.html#services">Commissioning / PM</a></li>
         </ul>
       </div>

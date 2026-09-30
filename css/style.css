@@ -30,7 +30,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   color: var(--text-dark);
   background: var(--white);
   line-height: 1.6;
@@ -44,7 +44,7 @@ input, select, textarea { font-family: inherit; }
 
 /* ---- Typography ---- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   line-height: 1.15;
 }
@@ -96,7 +96,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.06em;
@@ -136,7 +136,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 0.88rem;
   letter-spacing: 0.05em;
@@ -378,7 +378,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   bottom: 0; left: 0; right: 0;
   padding: 3rem 1.25rem 3.5rem;
   background: linear-gradient(to top, rgba(13,4,16,0.9) 0%, transparent 100%);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.1em;
@@ -478,7 +478,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   display: block;
 }
 .leader-name {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.5rem; font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.15rem;
@@ -525,7 +525,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
 .service-card:hover::after { opacity: 1; }
 
 .service-num {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.2rem; font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -589,7 +589,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   align-items: flex-start;
 }
 .standard-label {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.75rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--accent);
@@ -649,7 +649,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
   gap: 0.5rem;
   background: #25D366;
   color: var(--white);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 0.65rem 1.4rem;
@@ -736,9 +736,16 @@ input.vf-verified { border-color: #5cb85c !important; }
    FOOTER
    ============================================================ */
 .footer {
-  background: var(--dark);
-  border-top: 1px solid rgba(212,160,23,0.1);
+  position: relative;
+  background: linear-gradient(180deg, #241021 0%, #1a0b18 100%);
   padding: 4rem 0 0;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212,160,23,0.5) 25%, rgba(212,160,23,0.5) 75%, transparent);
 }
 .footer-grid {
   display: grid;
@@ -749,13 +756,13 @@ input.vf-verified { border-color: #5cb85c !important; }
 .footer-brand .nav-logo { margin-bottom: 1rem; display: inline-block; }
 .footer-brand .nav-logo-img { height: 44px; }
 .footer-tagline {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.8rem; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: rgba(212,160,23,0.5);
   margin-bottom: 0.75rem;
 }
-.footer-brand > p { color: rgba(255,255,255,0.45); font-size: 0.84rem; line-height: 1.75; margin-bottom: 1.25rem; max-width: 270px; }
+.footer-brand > p { color: rgba(255,255,255,0.6); font-size: 0.84rem; line-height: 1.75; margin-bottom: 1.25rem; max-width: 270px; }
 .footer-social { display: flex; gap: 0.5rem; }
 .footer-social a {
   width: 34px; height: 34px;
@@ -769,7 +776,7 @@ input.vf-verified { border-color: #5cb85c !important; }
 .footer-social a:hover { background: var(--accent); color: var(--dark); border-color: var(--accent); }
 
 .footer-col h4 {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.9rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--white);
@@ -778,10 +785,10 @@ input.vf-verified { border-color: #5cb85c !important; }
   border-bottom: 1px solid rgba(212,160,23,0.1);
 }
 .footer-col ul { display: flex; flex-direction: column; gap: 0.45rem; }
-.footer-col ul li a { font-size: 0.84rem; color: rgba(255,255,255,0.45); }
+.footer-col ul li a { font-size: 0.84rem; color: rgba(255,255,255,0.62); }
 .footer-col ul li a:hover { color: var(--accent); padding-left: 4px; }
 
-.footer-reg { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; }
+.footer-reg { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.75rem; }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -792,7 +799,7 @@ input.vf-verified { border-color: #5cb85c !important; }
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.32); }
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
 
 /* ============================================================
    WHATSAPP FLOAT BUTTON
@@ -857,7 +864,7 @@ input.vf-verified { border-color: #5cb85c !important; }
    ============================================================ */
 .ind-group { margin-bottom: 3.5rem; }
 .ind-group-title {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1rem; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--accent);
@@ -1109,7 +1116,7 @@ input.vf-verified { border-color: #5cb85c !important; }
   background: var(--primary);
   display: flex; align-items: center; justify-content: center;
   color: var(--accent);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700; font-size: 1rem;
   flex-shrink: 0;
 }
@@ -1196,7 +1203,7 @@ input.vf-verified { border-color: #5cb85c !important; }
   gap: 0;
 }
 .bbbee-badge-abbr {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.18em;
@@ -1204,7 +1211,7 @@ input.vf-verified { border-color: #5cb85c !important; }
   text-transform: uppercase;
 }
 .bbbee-badge-level-text {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
   font-size: 0.66rem;
   letter-spacing: 0.3em;
@@ -1213,7 +1220,7 @@ input.vf-verified { border-color: #5cb85c !important; }
   margin-top: 0.1rem;
 }
 .bbbee-badge-number {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 5.5rem;
   line-height: 0.95;
@@ -1221,7 +1228,7 @@ input.vf-verified { border-color: #5cb85c !important; }
   margin: 0.05rem 0;
 }
 .bbbee-badge-contributor {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 0.68rem;
   letter-spacing: 0.24em;
@@ -1269,7 +1276,7 @@ input.vf-verified { border-color: #5cb85c !important; }
 }
 .bbbee-benefit strong {
   display: block;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 1.02rem;
   color: var(--white);
@@ -1287,8 +1294,10 @@ input.vf-verified { border-color: #5cb85c !important; }
    ============================================================ */
 .fade-up {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
 }
 .fade-up.d1 { transition-delay: 0.1s; }
 .fade-up.d2 { transition-delay: 0.2s; }
@@ -1495,7 +1504,7 @@ input.vf-verified { border-color: #5cb85c !important; }
 }
 .map-tooltip.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .map-tooltip .mt-country {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 1.08rem;
   color: var(--accent-light);
