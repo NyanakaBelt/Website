@@ -4,3 +4,12 @@
 /Mkuju2.png
 /Project map.png
 /Website background.jpg
+
+# Full-resolution camera originals (kept locally; resized copies live in images/mutoshi/)
+/2026*.jpg
+
+# Image-resizing tooling + scratch
+/node_modules/
+/package.json
+/package-lock.json
+/_contact.html
