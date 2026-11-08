@@ -503,3 +503,35 @@ function closeModal() {
     }
   });
 })();
+
+/* ---- Hero background slideshow ---- */
+(function heroSlideshow() {
+  const wrap = document.getElementById('heroSlides');
+  if (!wrap) return;
+
+  const slides = Array.from(wrap.querySelectorAll('.h-hero-slide'));
+  if (slides.length < 2) return;
+
+  let index = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
+  let timer = null;
+
+  function show(i) {
+    slides[index].classList.remove('is-active');
+    index = (i + slides.length) % slides.length;
+    slides[index].classList.add('is-active');
+  }
+  function next() { show(index + 1); }
+
+  function start() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!timer) timer = setInterval(next, 6000);
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  // Pause while the tab is hidden to save work
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop(); else start();
+  });
+
+  start();
+})();

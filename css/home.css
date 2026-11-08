@@ -41,9 +41,18 @@ body.home { background: var(--paper); font-family: var(--f-body); color: #1c1119
 .home .h-dark .h-link { color: var(--gold-hi); }
 
 /* ---------- HERO ---------- */
-.h-hero { position: relative; min-height: 880px; padding-top: var(--nav-h); color: #fff; background: var(--ink) url('../images/mkuju-main.jpg') center/cover no-repeat; display: flex; flex-direction: column; overflow: hidden; }
-.h-hero::before { content: ''; position: absolute; inset: 0; background: rgba(22,10,21,.74); }
-.h-hero::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 55%; background: rgba(22,10,21,.4); }
+.h-hero { position: relative; min-height: 880px; padding-top: var(--nav-h); color: #fff; background: var(--ink); isolation: isolate; display: flex; flex-direction: column; overflow: hidden; }
+/* Hero background slideshow (sits below the dark overlay pseudo-elements).
+   Selector is scoped as a direct child to beat the `.h-hero > *` rule,
+   which would otherwise force position:relative / z-index:1 and collapse it. */
+.h-hero > .h-hero-slides { position: absolute; inset: 0; z-index: -1; }
+.h-hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease-in-out; will-change: opacity; }
+.h-hero-slide.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .h-hero-slide { transition: none; }
+}
+.h-hero::before { content: ''; position: absolute; inset: 0; background: rgba(22,10,21,.34); }
+.h-hero::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 55%; background: transparent; }
 .h-hero > * { position: relative; z-index: 1; }
 .h-hero-body { flex: 1; display: flex; align-items: center; padding: 80px 0 64px; }
 .h-hero-body > .h-wrap { width: 100%; }
