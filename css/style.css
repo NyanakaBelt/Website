@@ -1472,6 +1472,7 @@ input.vf-verified { border-color: #5cb85c !important; }
 #world-map #us,  #world-map #us path,
 #world-map #tz,
 #world-map #za,
+#world-map #cd,
 #world-map #ae {
   fill: var(--accent);
   stroke: var(--accent-dark);
@@ -1481,6 +1482,7 @@ input.vf-verified { border-color: #5cb85c !important; }
 #world-map #us:hover path, #world-map #us path:hover,
 #world-map #tz:hover,
 #world-map #za:hover,
+#world-map #cd:hover,
 #world-map #ae:hover { fill: var(--accent-light); }
 
 /* Tooltip */

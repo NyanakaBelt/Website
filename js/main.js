@@ -262,6 +262,12 @@ function closeModal() {
 
   /* country (ISO id) → engagement. No client is ever named publicly. */
   const DATA = {
+    cd: {
+      country: 'Democratic Republic of the Congo',
+      client:  'Confidential Client',
+      scope:   'Greenfield Mutoshi copper–cobalt plant in Kolwezi — full process control commissioning on Siemens PCS 7, with Altivar VSD and SIMOCODE parameterization on PROFIBUS, loop checks, control-room build and OT cybersecurity verification.',
+      modal:   'modal-mutoshi',
+    },
     us: {
       country: 'United States',
       client:  'Confidential Client',

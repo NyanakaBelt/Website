@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects Portfolio | Mechatrolix</title>
-  <meta name="description" content="Mechatrolix project portfolio: uranium plant automation, WinCC-Odoo ERP integration, power station lime plant and wastewater treatment EC&amp;I.">
-  <meta name="keywords" content="automation projects portfolio, uranium plant SCADA, WinCC Odoo integration, power station PLC, wastewater EPLAN, Siemens S7-1500">
+  <meta name="description" content="Mechatrolix project portfolio: Mutoshi copper-cobalt plant commissioning in Kolwezi DR Congo, uranium plant automation, WinCC-Odoo ERP integration, power station lime plant and wastewater treatment EC&amp;I.">
+  <meta name="keywords" content="automation projects portfolio, Mutoshi copper cobalt commissioning, Kolwezi DRC mining automation, Siemens PCS7, SIMOCODE PROFIBUS, uranium plant SCADA, WinCC Odoo integration, power station PLC, wastewater EPLAN, Siemens S7-1500">
   <meta property="og:title" content="Projects Portfolio | Mechatrolix">
   <meta property="og:description" content="Real-world industrial automation projects delivered by Mechatrolix.">
   <meta property="og:type" content="website">
@@ -44,6 +44,34 @@
 <div class="modal-overlay" id="modalOverlay"></div>
 
 <!-- Hidden modal templates -->
+<template id="modal-mutoshi">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <img src="images/mutoshi/Mutoshi_01.jpeg" alt="Mutoshi Copper-Cobalt Plant, Kolwezi, DRC" class="modal-img">
+    <h2>Mutoshi Copper&ndash;Cobalt Plant</h2>
+    <div class="modal-tags">
+      <span class="project-tag">Mining</span>
+      <span class="project-tag">Greenfield</span>
+      <span class="project-tag">Process Control Commissioning</span>
+      <span class="project-tag">DR Congo</span>
+    </div>
+    <p>Greenfield copper and cobalt processing plant at Mutoshi, Kolwezi, in the Democratic Republic of the Congo's Copperbelt (Lualaba Province). Mechatrolix led process control commissioning across the full plant, taking every process area &mdash; from ore handling and milling through to final cobalt cake drying and packing &mdash; from construction completion into live, stable production on a Siemens PCS 7 distributed control system.</p>
+    <p><strong style="color:var(--accent);">Commissioning Scope:</strong> Process control commissioning of each process area in sequence &mdash; field-to-DCS signal verification, device parameterization, loop tuning and controlled first start-up. Parameterization of all Schneider Altivar variable-speed drives and Siemens SIMOCODE motor-management units on PROFIBUS: node addressing, motor and protection data, drive setpoints and status feedback. Full instrument loop checks end-to-end, from field device through marshalling and PCS 7 I/O to the operator faceplate, across analogue and digital signals. Control-room server and operator station setup and installation &mdash; PCS 7 OS server and client build, operator graphics, alarm management and historian. OT cybersecurity verification across the control network: hardening checks, access control and network segmentation validation.</p>
+    <p><strong style="color:var(--accent);">Areas Commissioned:</strong> Ore Handling &amp; Milling &bull; Leaching &bull; Post-Leach &amp; CCD Thickening &bull; PLS Clarification &bull; Copper Solvent Extraction &bull; Electrowinning &bull; Fe&ndash;Al&ndash;Mn Precipitation &amp; Thickening &bull; Cobalt Precipitation &amp; Thickening &bull; Filtration &bull; Cobalt Cake Drying &amp; Packing &bull; Reagents &bull; Water, Air &amp; Steam Services &mdash; and the balance of the plant's process areas.</p>
+    <h4>Technologies</h4>
+    <div class="modal-tech">
+      <span class="tech-pill">Siemens PCS 7</span>
+      <span class="tech-pill">SIMATIC S7-400</span>
+      <span class="tech-pill">PROFIBUS DP/PA</span>
+      <span class="tech-pill">Schneider Altivar VSDs</span>
+      <span class="tech-pill">Siemens SIMOCODE</span>
+      <span class="tech-pill">PCS 7 OS Server &amp; Clients</span>
+      <span class="tech-pill">Loop Checks &amp; Commissioning</span>
+      <span class="tech-pill">OT Cybersecurity</span>
+    </div>
+  </div>
+</template>
+
 <template id="modal-uranium">
   <div class="modal">
     <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
@@ -618,7 +646,23 @@
 
     <div class="projects-grid">
 
-      <div class="project-card fade-up" data-industry="mining" data-modal="modal-uranium">
+      <div class="project-card fade-up" data-industry="mining" data-modal="modal-mutoshi">
+        <div class="project-thumb">
+          <img src="images/mutoshi/Mutoshi_01.jpeg" alt="Mutoshi Copper-Cobalt Plant, Kolwezi, DRC" class="project-thumb-img">
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Mining</span>
+            <span class="project-tag">Greenfield</span>
+            <span class="project-tag">DR Congo</span>
+          </div>
+          <h3>Mutoshi Copper&ndash;Cobalt Plant</h3>
+          <p>Greenfield copper&ndash;cobalt processing plant in Kolwezi, DRC. Full process control commissioning on a Siemens PCS 7 DCS across every process area from ore handling and milling to cobalt cake drying and packing &mdash; Altivar VSD and SIMOCODE parameterization on PROFIBUS, end-to-end loop checks, control-room server and operator station build, and OT cybersecurity verification.</p>
+          <span class="link-arrow">View Full Detail <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up d1" data-industry="mining" data-modal="modal-uranium">
         <div class="project-thumb">
           <img src="images/mkuju-main.jpg" alt="Uranium Plant Automation" class="project-thumb-img">
         </div>
@@ -634,7 +678,7 @@
         </div>
       </div>
 
-      <div class="project-card fade-up d1" data-industry="manufacturing" data-modal="modal-odoo">
+      <div class="project-card fade-up" data-industry="manufacturing" data-modal="modal-odoo">
         <div class="project-thumb">
           <i class="fa-solid fa-arrow-right-arrow-left project-thumb-icon"></i>
         </div>
@@ -650,7 +694,7 @@
         </div>
       </div>
 
-      <div class="project-card fade-up" data-industry="energy" data-modal="modal-lime">
+      <div class="project-card fade-up d1" data-industry="energy" data-modal="modal-lime">
         <div class="project-thumb">
           <img src="images/lime-plant.jpg" alt="Power Station Lime Plant Refurbishment" class="project-thumb-img">
         </div>
@@ -666,7 +710,7 @@
         </div>
       </div>
 
-      <div class="project-card fade-up d1" data-industry="water" data-modal="modal-blinkpan">
+      <div class="project-card fade-up" data-industry="water" data-modal="modal-blinkpan">
         <div class="project-thumb">
           <img src="images/wwtp.jpg" alt="Wastewater Treatment EC&amp;I" class="project-thumb-img">
         </div>
@@ -682,7 +726,7 @@
         </div>
       </div>
 
-      <div class="project-card fade-up" data-industry="marine" data-modal="modal-finstab">
+      <div class="project-card fade-up d1" data-industry="marine" data-modal="modal-finstab">
         <div class="project-thumb">
           <i class="fa-solid fa-ship project-thumb-icon"></i>
         </div>
